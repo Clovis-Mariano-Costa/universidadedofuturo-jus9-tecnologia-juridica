@@ -1,0 +1,11 @@
+﻿User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /backend/
+Disallow: /private/
+Disallow: /internal/
+Disallow: /cofre/
+Disallow: /.env
+
+Sitemap: https://universidadedofuturo.jus9tecnologia.com.br/sitemap.xml
