@@ -8,10 +8,11 @@
     return authOrigin + '/auth/google/start?return_to=' + encodeURIComponent(location.href);
   }
 
-  function render(panel, message, authenticated, permissions){
+  function render(panel, message, authenticated, permissions, identity){
     var status = panel.querySelector('[data-auth-status]');
     var login = panel.querySelector('[data-auth-login]');
     var list = panel.querySelector('[data-auth-permissions]');
+    var context = panel.querySelector('[data-auth-identity]');
     if (status) status.textContent = message;
     if (login) login.href = loginUrl();
     if (list) {
@@ -23,6 +24,14 @@
         list.appendChild(span);
       });
       list.hidden = !authenticated || !(permissions || []).length;
+    }
+    if (context) {
+      context.textContent = identity ? [
+        identity.profile && identity.profile.label,
+        identity.origin && identity.origin.label,
+        identity.user && identity.user.label
+      ].filter(Boolean).join(' | ') : '';
+      context.hidden = !context.textContent;
     }
   }
 
@@ -36,9 +45,11 @@
       var session = await me.json();
       var permissionsResponse = await fetch(authOrigin + '/api/auth/permissions', { credentials:'include', cache:'no-store' });
       var permissionsPayload = permissionsResponse.ok ? await permissionsResponse.json() : {};
-      render(panel, 'Sessao ativa. Perfil operacional: ' + (session.profile || 'nao informado') + '.', true, permissionsPayload.permissions || []);
+      var contextResponse = await fetch(authOrigin + '/api/auth/context?origin=' + encodeURIComponent(location.origin), { credentials:'include', cache:'no-store' });
+      var contextPayload = contextResponse.ok ? await contextResponse.json() : {};
+      render(panel, 'Sessao ativa. Perfil operacional: ' + (session.profile || 'nao informado') + '.', true, permissionsPayload.permissions || [], contextPayload.identity || null);
     } catch (_) {
-      render(panel, 'Nao foi possivel verificar a sessao agora. Mantenha uso demonstrativo.', false, []);
+      render(panel, 'Nao foi possivel verificar a sessao agora. Mantenha uso demonstrativo.', false, [], null);
     }
   }
 
