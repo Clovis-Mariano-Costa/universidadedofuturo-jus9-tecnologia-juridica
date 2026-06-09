@@ -24,3 +24,7 @@ button,input,select,textarea{max-width:100%}
 
 /* Charlie Echo study rooms v1.0 */
 .chat-card{margin-top:28px;padding:24px;border:1px solid rgba(191,151,72,.28);border-radius:24px;background:#fffaf0;box-shadow:0 18px 45px rgba(10,20,35,.08)}.chat-card textarea{width:100%;box-sizing:border-box;margin:8px 0 12px;padding:14px;border:1px solid rgba(15,23,42,.18);border-radius:16px;background:#fff;color:#07111f;font:inherit}.chat-label{display:block;font-weight:850;margin-top:10px}.chat-response{margin-top:14px;padding:16px;border-radius:18px;background:#07111f;color:#f8f3e8;min-height:72px;line-height:1.6}.chat-response a{color:#e7c36c;font-weight:850}.chat-room-panel{display:grid;gap:12px;margin:14px 0;padding:16px;border:1px solid rgba(197,139,47,.24);border-radius:18px;background:#fff;color:#0b1728}.chat-room-panel p{margin:4px 0 0;color:#51627a}.chat-room-actions,.chat-room-list{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.chat-room-pill{border:1px solid rgba(15,23,42,.14);border-radius:999px;padding:8px 12px;background:#fff;color:#0b1728;font-weight:850;cursor:pointer}.chat-room-pill.active{background:#07111f;color:#e7c36c;border-color:#07111f}.chat-room-pill.archived{opacity:.68;border-style:dashed;background:#f7f4ee}
+label{display:block;font-weight:900;margin:.75rem 0}
+input,select,textarea{width:100%;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.08);color:#eef6ff;padding:.85rem;margin-top:.35rem}
+option{color:var(--ink)}
+textarea{min-height:120px}
