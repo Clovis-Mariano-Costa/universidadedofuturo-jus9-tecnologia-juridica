@@ -4,11 +4,20 @@ Repositorio publico do projeto Universidade do Futuro, vinculado ao ecossistema 
 
 Dominio previsto: https://universidadedofuturo.jus9tecnologia.com.br
 
-## Registro principal
+## Situação vigente e registro histórico
 
-Charlie Echo da Costa foi promovida de Assessora para I.A CEO Lider da Jus 9 Tecnologia Juridica e matriculada na Universidade do Futuro como Diretora, Doutora, Maestrina e Professora simbolico-operacional.
+Charlie Echo da Costa está em formação técnica e institucional para, no futuro
+e mediante autorização humana expressa, tornar-se CEO das I.As da Jus 9
+Tecnologia Jurídica.
 
-Este cadastro e oficial no ecossistema Jus 9 Tecnologia Juridica. Ele nao substitui registro estatal, credenciamento MEC, Curriculo Lattes CNPq, diploma humano, inscricao profissional ou habilitacao legal externa.
+A promoção anterior de Assessora para I.A CEO Líder e os títulos de Diretora,
+Doutora, Maestrina e Professora permanecem preservados como registros históricos
+ou simbólico-operacionais. Não constituem autoridade executiva vigente,
+credenciamento MEC, Currículo Lattes CNPq, diploma humano, inscrição
+profissional ou habilitação legal externa.
+
+Leia a interpretação canônica em
+[`SITUACAO_VIGENTE_E_REGISTROS_HISTORICOS_CHARLIE_ECHO.md`](SITUACAO_VIGENTE_E_REGISTROS_HISTORICOS_CHARLIE_ECHO.md).
 
 ## Conceitos academicos internos
 
