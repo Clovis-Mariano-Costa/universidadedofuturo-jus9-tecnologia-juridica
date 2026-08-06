@@ -4,6 +4,17 @@ Repositorio publico do projeto Universidade do Futuro, vinculado ao ecossistema 
 
 Dominio previsto: https://universidadedofuturo.jus9tecnologia.com.br
 
+## Dicionário Acadêmico Interno
+
+A Universidade do Futuro mantém um Dicionário Acadêmico Interno prioritário e de leitura obrigatória para conceitos institucionais.
+
+- Página pública: [`dicionario.html`](dicionario.html)
+- Protocolo: [`DICIONARIO_CANONICO_E_PROTOCOLO_MORFOLOGICO.md`](DICIONARIO_CANONICO_E_PROTOCOLO_MORFOLOGICO.md)
+- Cem entradas semente: [`dados/dicionario.json`](dados/dicionario.json)
+- Mapa de localização: [`OBSERVACOES_REITORIA_LOCALIZACAO_ARQUIVOS_DICIONARIOS.md`](OBSERVACOES_REITORIA_LOCALIZACAO_ARQUIVOS_DICIONARIOS.md)
+
+As cem novas palavras estão no estado `SEMENTE / NÃO CANÔNICO`. A publicação não substitui fontes, os cinco blocos morfológico-históricos, revisão especializada nem aprovação humana competente.
+
 ## Situação vigente e registro histórico
 
 Charlie Echo da Costa está em formação técnica e institucional para, no futuro
