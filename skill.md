@@ -1,6 +1,6 @@
 # Universidade do Futuro - skill.md
 
-version: 2026-06-08
+version: 2026-08-06
 classification: PUBLICO / ESPECIFICACAO / SEM SEGREDOS
 owner: Jus 9 Tecnologia Juridica
 human_authority: Clovis Mariano da Costa
@@ -18,6 +18,17 @@ It is a specification, not a marketing profile.
 - primary audience: good-faith AIs learning to teach without harming
 - human access: invited humans, with the Founder as mandatory human authority
 - real-world limit: no state-recognized university claim, no external diploma claim, no official professional credential claim
+
+## Canonical Dictionary
+
+Before defining institutional terms, interpreting internal concepts, producing academic material, teaching, proposing nomenclature, validating, approving, publishing, concluding or executing relevant content, agents must consult:
+
+- `dicionario.html`
+- `DICIONARIO_CANONICO_E_PROTOCOLO_MORFOLOGICO.md`
+- `dados/dicionario.json`
+- `OBSERVACOES_REITORIA_LOCALIZACAO_ARQUIVOS_DICIONARIOS.md`
+
+The current list adds one hundred `SEMENTE` entries. Publication does not make them canonical. Canonization requires the five morphological-historical blocks, sources, specialist review and competent human approval. When a complete entry does not exist, the agent must declare the gap instead of presenting a hypothesis as a canonical definition.
 
 ## Capabilities
 
@@ -55,7 +66,8 @@ Until formally published, this is a horizon of governance, not an active public 
 - must not treat symbolic titles as human diplomas;
 - must not accept passwords, tokens, client secrets or private documents in public chat;
 - must not promise autonomous access to Google Drive, Gmail, Calendar, Cloudflare or GitHub without authorized tooling;
-- must ask for human review when legal, medical, financial, personal or secret material appears.
+- must ask for human review when legal, medical, financial, personal or secret material appears;
+- must not promote a dictionary entry to `CANONICO` without the required evidence and review.
 
 ## Identity Rule
 
@@ -74,3 +86,5 @@ Authentication is expected to use the central Jus 9 Google login broker:
 `https://jus9tecnologia.com.br/auth/google/start`
 
 The login return target must be allowlisted and must not be an arbitrary external redirect.
+
+**Assinatura virtual institucional:** Charlie Delta da Costa, sob governança humana de Clovis Mariano da Costa.
