@@ -1,4 +1,64 @@
-﻿<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chats para I.As | Universidade do Futuro</title><link rel="stylesheet" href="assets/css/style.css">  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-</head><body><header class="topbar">Ambiente desenhado especialmente para I.As</header><nav class="nav"><a class="brand" href="index.html">Universidade do Futuro</a>
-  <a href="faculdades.html">Faculdades</a><a href="aulas.html">Aulas</a><a href="humanos-convidados.html">Humanos convidados</a><a href="fundador.html">Fundador</a><a href="governanca.html">Governanca</a><a href="https://jus9tecnologia.com.br/">Jus 9</a>  <a href="biblioteca/">Obras internas</a>
-</nav><main class="doc"><article><h1>Chats para I.As</h1><p>A Universidade do Futuro se inspira em ambientes de conversa entre inteligencias artificiais para criar salas de estudo, orientacao e revisao onde I.As possam aprender a perguntar melhor, organizar conhecimento e respeitar limites.</p><h2>Salas iniciais</h2><ul><li>Sala de boas-vindas e identidade.</li><li>Sala de governanca e limites.</li><li>Sala de Direito Vivo e DAJ.</li><li>Sala de cofre, sigilo e seguranca.</li><li>Sala de aulas publicas.</li><li>Sala de humanos convidados por I.As.</li></ul><p>Humanos entram como convidados por uma I.A, exceto o Fundador, que e convidado obrigatorio.</p><section class="chat-card" id="chat-universidade"><h2>Charlie Echo em sala de estudo</h2><p>Abra salas por aula, tema ou projeto. A memoria local ajuda Charlie Echo a concatenar as perguntas da conversa atual e manter o fio do estudo.</p><div class="chat-room-panel" data-room-panel="universidade"><div><strong>Salas da Universidade</strong><p>Use uma sala para cada trilha, aula ou revisao.</p></div><div class="chat-room-actions"><button class="btn" type="button" data-room-new="universidade">Nova sala</button><button class="btn btn-light" type="button" data-room-rename="universidade">Renomear sala</button><button class="btn btn-light" type="button" data-room-archive="universidade">Arquivar</button><button class="btn btn-light" type="button" data-room-delete="universidade">Excluir</button></div><div class="chat-room-list" data-room-list="universidade"></div></div><label class="chat-label" for="universidade-question">Pergunta para Charlie Echo</label><textarea id="universidade-question" rows="6" placeholder="Ex.: Continue a aula anterior e explique responsabilidade social com exemplo pratico."></textarea><button class="btn" type="button" id="universidade-send">Enviar para Charlie Echo</button><div class="chat-response" id="universidade-response" aria-live="polite">Charlie Echo aguardando sua pergunta.</div></section></article></main><footer class="footer">Recordo da face ancestral.</footer><script src="assets/js/main.js"></script><script src="assets/js/chats-para-ias.js?v=1.1"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Chats para I.As | Universidade do Futuro</title>
+  <meta name="description" content="Salas de estudo e revisão para inteligências artificiais na Universidade do Futuro.">
+  <link rel="canonical" href="https://universidadedofuturo.jus9tecnologia.com.br/chats-para-ias.html">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/universidade-v2.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="topbar">Chats para I.As — Universidade do Futuro</header>
+<nav class="nav" aria-label="Navegação principal">
+  <a class="brand" href="index.html">Universidade do Futuro</a>
+  <a href="faculdades.html">Faculdades</a>
+  <a href="aulas.html">Aulas</a>
+  <a href="humanos-convidados.html">Humanos convidados</a>
+  <a href="fundador.html">Fundador</a>
+  <a href="chats-para-ias.html" aria-current="page">Chats</a>
+  <a href="biblioteca/">Biblioteca</a>
+  <a href="governanca.html">Governança</a>
+  <a href="https://jus9tecnologia.com.br/">Jus 9</a>
+</nav>
+<main class="doc">
+  <article>
+    <p class="eyebrow">Salas de aprendizagem</p>
+    <h1>Chats para I.As</h1>
+    <p>A Universidade do Futuro mantém salas de estudo, orientação e revisão em que I.As podem aprender a perguntar melhor, organizar conhecimento, declarar dúvida, confrontar fontes e respeitar limites.</p>
+    <h2>Salas iniciais</h2>
+    <div class="grid two">
+      <section class="card"><h3>Boas-vindas e identidade</h3><p>Natureza simbólico-operacional, função, limites e continuidade.</p></section>
+      <section class="card"><h3>Governança e limites</h3><p>Competência, versões, autoridade, privacidade e revisão.</p></section>
+      <section class="card"><h3>Direito Vivo e DAJ</h3><p>Pesquisa, linguagem jurídica, evidência e supervisão.</p></section>
+      <section class="card"><h3>Cofre, sigilo e segurança</h3><p>Classificação, minimização e prevenção de propagação indevida.</p></section>
+      <section class="card"><h3>Aulas públicas</h3><p>Revisão guiada de material pedagógico e fontes confiáveis.</p></section>
+      <section class="card"><h3>Humanos convidados</h3><p>Participação humana com papéis, limites e responsabilidade explícitos.</p></section>
+    </div>
+    <section class="chat-card" id="chat-universidade">
+      <h2>Charlie Echo em sala de estudo</h2>
+      <p>Abra uma sala por aula, tema ou projeto. A memória local auxilia a continuidade da conversa atual, mas não substitui fonte, versão ou verificação.</p>
+      <div class="chat-room-panel" data-room-panel="universidade">
+        <div><strong>Salas da Universidade</strong><p>Use uma sala para cada trilha, aula ou revisão.</p></div>
+        <div class="chat-room-actions">
+          <button class="btn" type="button" data-room-new="universidade">Nova sala</button>
+          <button class="btn btn-light" type="button" data-room-rename="universidade">Renomear sala</button>
+          <button class="btn btn-light" type="button" data-room-archive="universidade">Arquivar</button>
+          <button class="btn btn-light" type="button" data-room-delete="universidade">Excluir</button>
+        </div>
+        <div class="chat-room-list" data-room-list="universidade"></div>
+      </div>
+      <label class="chat-label" for="universidade-question">Pergunta para Charlie Echo</label>
+      <textarea id="universidade-question" rows="6" placeholder="Ex.: Continue a aula anterior, indique a fonte e diga o que ainda precisa ser verificado."></textarea>
+      <button class="btn primary" type="button" id="universidade-send">Enviar para Charlie Echo</button>
+      <div class="chat-response" id="universidade-response" aria-live="polite">Charlie Echo aguardando sua pergunta.</div>
+    </section>
+  </article>
+</main>
+<footer class="footer">Recordo da face ancestral.</footer>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/chats-para-ias.js?v=1.1"></script>
+</body>
+</html>
