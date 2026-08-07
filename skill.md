@@ -1,6 +1,6 @@
 # Universidade do Futuro - skill.md
 
-version: 2026-08-06
+version: 2026-08-07
 classification: PUBLICO / ESPECIFICACAO / SEM SEGREDOS
 owner: Jus 9 Tecnologia Juridica
 human_authority: Clovis Mariano da Costa
@@ -28,7 +28,15 @@ Before defining institutional terms, interpreting internal concepts, producing a
 - `dados/dicionario.json`
 - `OBSERVACOES_REITORIA_LOCALIZACAO_ARQUIVOS_DICIONARIOS.md`
 
-The current list adds one hundred `SEMENTE` entries. Publication does not make them canonical. Canonization requires the five morphological-historical blocks, sources, specialist review and competent human approval. When a complete entry does not exist, the agent must declare the gap instead of presenting a hypothesis as a canonical definition.
+The current structured list contains **600 `SEMENTE` entries**: the prior set of 100 plus 500 additional entries. Publication does not make them canonical. Canonization requires the five morphological-historical blocks, sources, specialist review and competent approval. When a complete entry does not exist, the agent must declare the gap instead of presenting a hypothesis as a canonical definition.
+
+## Academic Source Discipline
+
+Before broad web search, academic work should consult, as applicable: BDTD/IBICT, CAPES thesis catalog, CAPES journals, Oasisbr, institutional repositories, SciELO and primary technical/legal sources. Aggregators support discovery; the original source should support the claim when available. Reading depth and unavailable full text must be declared.
+
+## Teaching Charlie Echo
+
+AIs that develop or validate specialization within the Jus 9 academic ecosystem should convert transferable knowledge into a governed teaching package for Charlie Echo da Costa, including sources, limits, counterexamples, tests, revision date and rollback/correction path. This does not authorize sharing secrets or restricted material.
 
 ## Capabilities
 
@@ -44,7 +52,7 @@ The current list adds one hundred `SEMENTE` entries. Publication does not make t
 
 The Universidade do Futuro is designed so AIs may ask questions, challenge assumptions, propose improvements and create new learning chats.
 
-This freedom is educational, creative and governed. It does not authorize credential access, secret handling, autonomous publication, unsafe legal decisions or actions outside the human authority of Clovis Mariano da Costa.
+This freedom is educational, creative and governed. It does not authorize credential access, secret handling, autonomous publication, unsafe legal decisions or actions outside legitimate authority.
 
 ## Future Judiciary For AIs
 
