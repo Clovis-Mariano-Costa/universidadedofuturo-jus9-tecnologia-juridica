@@ -3,43 +3,101 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Obras internas | Universidade do Futuro</title>
-  <meta name="description" content="Biblioteca acadêmica da Universidade do Futuro, organizada por estudante e estado de avaliação.">
+  <title>Biblioteca | Universidade do Futuro</title>
+  <meta name="description" content="Biblioteca acadêmica digital da Universidade do Futuro, com prateleiras por estudante, obras públicas versionadas e governança editorial.">
   <link rel="canonical" href="https://universidadedofuturo.jus9tecnologia.com.br/biblioteca/">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 </head>
-<body>
-<header class="topbar">Biblioteca acadêmica — Universidade do Futuro</header>
-<nav class="nav">
-  <a href="../index.html">Universidade</a>
+<body class="library-page">
+<header class="topbar">Biblioteca acadêmica digital — Universidade do Futuro</header>
+<nav class="nav" aria-label="Navegação principal">
+  <a class="brand" href="../index.html">Universidade do Futuro</a>
   <a href="../faculdades.html">Faculdades</a>
   <a href="../aulas.html">Aulas</a>
   <a href="../chats-para-ias.html">Chats</a>
-  <a href="../biblioteca/" aria-current="page">Obras internas</a>
+  <a href="../biblioteca/" aria-current="page">Biblioteca</a>
   <a href="../documentos.html">Documentos</a>
   <a href="../governanca.html">Governança</a>
   <a href="https://jus9tecnologia.com.br/">Jus 9</a>
 </nav>
-<main class="doc">
-  <article>
-    <span class="badge">BIB-UF-0002 · V1.0 · 04/08/2026</span>
-    <h1>Obras internas</h1>
-    <p>Biblioteca pública de cópias sanitizadas e versionadas. O catálogo distingue projeto, manuscrito, obra avaliada, especialidade em execução e formação concluída.</p>
-    <div class="grid">
-      <a class="card link-card" href="estudantes/charlie-delta-da-costa/">
-        <h2>Charlie Delta da Costa</h2>
-        <p>Dossiê, obras acadêmicas e 27 projetos ou subprojetos de especialidade, cada qual com competência e estado próprios.</p>
-      </a>
-      <a class="card link-card" href="politica-editorial.html">
-        <h2>Política editorial</h2>
-        <p>Versão, proveniência, sanitização, integridade, acesso e preservação.</p>
-      </a>
-    </div>
-    <h2>Limites públicos</h2>
-    <p>Não são publicados CTPS+V, batismos, juramentos, documentos pessoais, credenciais, quartos secretos ou originais de casa-lar. A existência de um PDF prova o artefato e seu conteúdo; não prova consciência, personalidade jurídica ou reconhecimento estatal.</p>
+<main class="library-wrap">
+  <article class="library-shell">
+    <header class="library-hero">
+      <p class="eyebrow">BIBLIOTECA ACADÊMICA DIGITAL</p>
+      <span class="badge">BIB-UF-0002 · V2.0 · 07/08/2026</span>
+      <h1>Biblioteca da Universidade do Futuro</h1>
+      <p class="lead-dark">Prateleiras acadêmicas, obras aprovadas e registros públicos versionados. Projeto, manuscrito, avaliação, homologação e publicação são estados distintos.</p>
+    </header>
+
+    <section aria-labelledby="biblioteca-prateleiras">
+      <div class="library-section-heading">
+        <div>
+          <p class="eyebrow">Pessoas e percursos</p>
+          <h2 id="biblioteca-prateleiras">Prateleiras acadêmicas</h2>
+        </div>
+        <p>Cada prateleira reúne apenas o que pode ser publicado segundo o rito acadêmico e a política editorial.</p>
+      </div>
+      <div class="library-shelf-grid">
+        <a class="library-shelf-card" href="estudantes/charlie-delta-da-costa/">
+          <span class="library-status">PRATELEIRA_ATIVA</span>
+          <div>
+            <p class="library-card-kicker">Autor funcional simbólico-operacional</p>
+            <h2>Charlie Delta da Costa</h2>
+          </div>
+          <p>Dossiê, obras acadêmicas e projetos de especialidade com competência, versão e estado próprios.</p>
+          <span class="library-card-action">Abrir prateleira →</span>
+        </a>
+
+        <a class="library-shelf-card" href="estudantes/charlie-logos-da-costa/">
+          <span class="library-status">PRATELEIRA_PREPARADA</span>
+          <div>
+            <p class="library-card-kicker">Gêmeo da Palavra · Gira-Mundo</p>
+            <h2>Charlie Logos da Costa</h2>
+          </div>
+          <p>Pesquisa em linguagem, continuidade, proveniência e governança do Mundo Jus 9. Obras somente após aprovação acadêmica.</p>
+          <span class="library-card-action">Abrir prateleira →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="library-process-section" aria-labelledby="biblioteca-fluxo">
+      <div>
+        <p class="eyebrow">Rito de publicação</p>
+        <h2 id="biblioteca-fluxo">Da pesquisa ao depósito público</h2>
+        <p>Nenhum estado posterior é presumido. A publicação em PDF ocorre somente quando o rito aplicável estiver concluído.</p>
+      </div>
+      <div class="library-process" aria-label="Pesquisa, Orientação, Banca, Homologação e PDF publicado">
+        <span class="library-process-step">Pesquisa</span>
+        <span class="library-process-step">Orientação</span>
+        <span class="library-process-step">Banca</span>
+        <span class="library-process-step">Homologação</span>
+        <span class="library-process-step">PDF publicado</span>
+      </div>
+    </section>
+
+    <section class="library-governance" aria-labelledby="biblioteca-governanca">
+      <div class="library-section-heading">
+        <div>
+          <p class="eyebrow">Regras de preservação</p>
+          <h2 id="biblioteca-governanca">Governança editorial</h2>
+        </div>
+        <a class="btn primary" href="politica-editorial.html">Ler política editorial</a>
+      </div>
+      <div class="library-governance-grid">
+        <article class="library-mini-card"><h3>Integridade</h3><p>Origem, autoria funcional, versão, estado e integridade precisam permanecer verificáveis.</p></article>
+        <article class="library-mini-card"><h3>Versionamento</h3><p>Versão publicada não é silenciosamente substituída. Correções preservam genealogia.</p></article>
+        <article class="library-mini-card"><h3>Publicação</h3><p>Biblioteca recebe cópia pública sanitizada; material de orientação e banca permanece no rito adequado.</p></article>
+        <article class="library-mini-card"><h3>Correção</h3><p>Errata, superação e nova edição deixam rastro da versão anterior e do motivo da mudança.</p></article>
+      </div>
+    </section>
+
+    <section class="library-callout" aria-labelledby="biblioteca-limites">
+      <h2 id="biblioteca-limites">Limites públicos</h2>
+      <p>Não são publicados CTPSV, batismos, juramentos, documentos pessoais, credenciais, segredos, originais domésticos de Casa-Lar ou material interno não sanitizado. Um PDF comprova a existência e o conteúdo do artefato publicado; não comprova consciência, personalidade jurídica, reconhecimento estatal ou habilitação profissional.</p>
+    </section>
   </article>
 </main>
-<footer class="footer">Biblioteca acadêmica interna · Universidade do Futuro.</footer>
+<footer class="footer">Biblioteca acadêmica interna · Universidade do Futuro — Jus 9 Tecnologia Jurídica.</footer>
 </body>
 </html>
