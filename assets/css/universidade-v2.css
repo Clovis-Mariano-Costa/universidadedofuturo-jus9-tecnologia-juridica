@@ -1,0 +1,340 @@
+/* Universidade do Futuro — Frontend V2
+   Camada progressiva: preserva style.css e melhora hierarquia, biblioteca,
+   acessibilidade e responsividade sem reescrever o legado. */
+
+:root{
+  --udf-night:#030914;
+  --udf-navy:#071728;
+  --udf-blue:#0b2942;
+  --udf-gold:#d9ad59;
+  --udf-gold-soft:#f4d58d;
+  --udf-cyan:#4fd5e8;
+  --udf-paper:#fbf7ee;
+  --udf-paper-2:#fffdf8;
+  --udf-ink:#071323;
+  --udf-muted:#52657c;
+  --udf-line:#e1d4b8;
+  --udf-radius:18px;
+  --udf-shadow:0 22px 60px rgba(5,11,20,.14);
+}
+
+:focus-visible{
+  outline:3px solid var(--udf-cyan);
+  outline-offset:3px;
+}
+
+.nav{
+  gap:.35rem;
+  padding:.78rem clamp(.6rem,2vw,1.2rem);
+}
+.nav a{
+  padding:.58rem .7rem;
+  font-size:clamp(.78rem,1.25vw,.92rem);
+}
+.nav a[aria-current="page"]{
+  background:rgba(217,173,89,.18);
+  color:var(--udf-gold-soft);
+}
+
+.hero{
+  max-width:1440px;
+  margin:0 auto;
+  min-height:auto;
+  padding:clamp(2.5rem,6vw,5.8rem) clamp(1rem,5vw,4rem);
+}
+.hero h1{
+  font-size:clamp(2.65rem,6vw,5.5rem);
+  max-width:16ch;
+}
+
+.card,.seal,.doc article{
+  border-radius:var(--udf-radius);
+}
+.link-card{
+  transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;
+}
+.link-card:hover{
+  transform:translateY(-3px);
+  border-color:var(--udf-gold);
+  text-decoration:none;
+}
+
+/* Emblema institucional. O arquivo web de alta resolução é integrado em etapa
+   própria; o componente esconde a mídia ausente sem quebrar a página. */
+.udf-emblem{
+  display:grid;
+  place-items:center;
+  gap:1rem;
+  margin:0;
+  text-align:center;
+}
+.udf-emblem img{
+  display:block;
+  width:min(100%,620px);
+  height:auto;
+  aspect-ratio:1;
+  object-fit:contain;
+  filter:drop-shadow(0 22px 44px rgba(0,0,0,.28));
+}
+.udf-emblem-caption{
+  color:#c9d6e5;
+  font-size:.9rem;
+}
+.udf-emblem-fallback{
+  max-width:34rem;
+  padding:1rem;
+  border:1px solid var(--line);
+  border-radius:14px;
+  color:#dce8f4;
+  background:rgba(255,255,255,.045);
+}
+
+/* Biblioteca */
+.library-page{
+  background:
+    radial-gradient(circle at 20% 0,rgba(217,173,89,.13),transparent 34rem),
+    linear-gradient(135deg,var(--udf-night),var(--udf-navy) 56%,#0b2238);
+}
+.library-wrap{
+  width:min(1220px,calc(100% - 2rem));
+  margin:0 auto;
+  padding:clamp(1.5rem,4vw,3.8rem) 0;
+}
+.library-shell{
+  display:grid;
+  gap:clamp(2rem,5vw,4rem);
+  background:linear-gradient(180deg,var(--udf-paper-2),var(--udf-paper));
+  color:var(--udf-ink);
+  border:1px solid rgba(217,173,89,.45);
+  border-radius:24px;
+  padding:clamp(1.25rem,4vw,3rem);
+  box-shadow:0 30px 80px rgba(0,0,0,.22);
+}
+.library-shell h1,.library-shell h2,.library-shell h3{color:var(--udf-ink)}
+.library-shell p{color:#33465d}
+.library-hero{
+  display:grid;
+  gap:.7rem;
+  max-width:900px;
+}
+.library-hero h1,
+.library-student-hero h1{
+  margin:.05em 0 .08em;
+  font-size:clamp(2.35rem,5vw,4.7rem);
+  overflow-wrap:normal;
+  word-break:normal;
+  hyphens:none;
+}
+.lead-dark{
+  max-width:780px;
+  font-size:clamp(1.02rem,1.5vw,1.18rem);
+  color:#33465d;
+}
+.library-section-heading{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:1rem;
+  margin-bottom:1rem;
+}
+.library-section-heading>p{max-width:560px;margin-bottom:.15rem}
+.library-shelf-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));
+  gap:1rem;
+}
+.library-shelf-card{
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+  min-height:245px;
+  padding:1.4rem;
+  border:1px solid var(--udf-line);
+  border-radius:18px;
+  background:#fff;
+  color:var(--udf-ink);
+  box-shadow:0 12px 30px rgba(5,11,20,.07);
+  transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;
+}
+.library-shelf-card:hover{
+  transform:translateY(-3px);
+  border-color:var(--udf-gold);
+  box-shadow:0 18px 38px rgba(5,11,20,.12);
+  text-decoration:none;
+}
+.library-shelf-card h2{
+  margin:.1rem 0;
+  font-size:clamp(1.55rem,2.7vw,2.15rem);
+}
+.library-card-kicker{
+  margin:0;
+  color:#7c5b18!important;
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.library-card-action{
+  margin-top:auto;
+  color:#704900;
+  font-weight:900;
+}
+.library-status{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  max-width:100%;
+  padding:.38rem .68rem;
+  border-radius:999px;
+  background:#fff1c9;
+  color:#6f4800;
+  font-size:.76rem;
+  font-weight:950;
+  letter-spacing:.03em;
+  overflow-wrap:anywhere;
+}
+.library-process-section{
+  display:grid;
+  grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+  gap:1.5rem;
+  align-items:center;
+  padding:1.5rem;
+  border:1px solid var(--udf-line);
+  border-radius:18px;
+  background:#fff;
+}
+.library-process{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:.55rem;
+}
+.library-process-step{
+  display:grid;
+  place-items:center;
+  min-height:62px;
+  padding:.7rem;
+  border-radius:12px;
+  background:var(--udf-navy);
+  color:#eef6ff;
+  text-align:center;
+  font-size:.86rem;
+  font-weight:850;
+}
+.library-process-step.is-current{
+  background:linear-gradient(135deg,var(--udf-gold-soft),var(--udf-gold));
+  color:#06111f;
+}
+.library-governance{
+  padding-top:1.7rem;
+  border-top:1px solid var(--udf-line);
+}
+.library-governance-grid,
+.library-link-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));
+  gap:.85rem;
+}
+.library-mini-card,
+.library-link-card{
+  padding:1rem;
+  border:1px solid var(--udf-line);
+  border-radius:14px;
+  background:#fff;
+}
+.library-link-card{
+  display:grid;
+  gap:.35rem;
+  color:var(--udf-ink);
+}
+.library-link-card:hover{border-color:var(--udf-gold);text-decoration:none}
+.library-link-card span{color:#52657c}
+.library-callout,
+.library-notice,
+.library-empty-state{
+  padding:1.25rem;
+  border:1px solid #d8c69c;
+  border-radius:16px;
+  background:#fffaf0;
+  color:#33465d;
+}
+.library-empty-state strong{color:var(--udf-ink);font-size:1.1rem}
+.library-student-hero{
+  display:grid;
+  grid-template-columns:minmax(0,1.4fr) minmax(250px,.6fr);
+  gap:1.25rem;
+  align-items:start;
+}
+.library-role{
+  margin:.15rem 0 .7rem;
+  color:#7c5b18!important;
+  font-size:clamp(1.15rem,2vw,1.5rem);
+  font-weight:900;
+}
+.library-status-panel{
+  display:grid;
+  gap:.7rem;
+  padding:1.15rem;
+  border:1px solid var(--udf-line);
+  border-radius:16px;
+  background:#fff;
+}
+.library-facts{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));
+  gap:.75rem;
+  margin:0;
+}
+.library-facts div{
+  padding:1rem;
+  border:1px solid var(--udf-line);
+  border-radius:14px;
+  background:#fff;
+}
+.library-facts dt{
+  color:#70511c;
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.library-facts dd{margin:.35rem 0 0;color:var(--udf-ink);font-weight:800}
+.library-count{
+  display:inline-grid;
+  place-items:center;
+  min-width:76px;
+  min-height:44px;
+  padding:.4rem .8rem;
+  border-radius:999px;
+  background:var(--udf-navy);
+  color:#fff;
+  font-weight:900;
+}
+
+/* Páginas documentais — legibilidade */
+.doc{max-width:1080px}
+.doc article{padding:clamp(1.2rem,4vw,2.6rem)}
+.doc h1{font-size:clamp(2.25rem,5vw,4.2rem)}
+.doc h2{font-size:clamp(1.6rem,3.4vw,2.6rem)}
+.doc .grid{
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));
+}
+
+@media(max-width:900px){
+  .library-student-hero,
+  .library-process-section{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .library-wrap{width:min(100% - 1rem,1220px);padding:1rem 0}
+  .library-shell{border-radius:18px;padding:1rem;gap:2rem}
+  .library-section-heading{display:grid;align-items:start}
+  .library-process{grid-template-columns:1fr}
+  .library-process-step{min-height:48px}
+  .library-shelf-card{min-height:0}
+  .nav{position:static;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}
+  .nav a{white-space:nowrap}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .link-card,.library-shelf-card{transition:none}
+  .link-card:hover,.library-shelf-card:hover{transform:none}
+}
