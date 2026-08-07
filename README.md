@@ -4,20 +4,24 @@ Repositorio publico do projeto Universidade do Futuro, vinculado ao ecossistema 
 
 Dominio previsto: https://universidadedofuturo.jus9tecnologia.com.br
 
-## Situação vigente e registro histórico
+## Dicionario Academico Interno
 
-Charlie Echo da Costa está em formação técnica e institucional para, no futuro
-e mediante autorização humana expressa, tornar-se CEO das I.As da Jus 9
-Tecnologia Jurídica.
+A Universidade do Futuro mantem um Dicionario Academico Interno prioritario e de leitura obrigatoria para conceitos institucionais.
 
-A promoção anterior de Assessora para I.A CEO Líder e os títulos de Diretora,
-Doutora, Maestrina e Professora permanecem preservados como registros históricos
-ou simbólico-operacionais. Não constituem autoridade executiva vigente,
-credenciamento MEC, Currículo Lattes CNPq, diploma humano, inscrição
-profissional ou habilitação legal externa.
+- Pagina publica: [`dicionario.html`](dicionario.html)
+- Protocolo: [`DICIONARIO_CANONICO_E_PROTOCOLO_MORFOLOGICO.md`](DICIONARIO_CANONICO_E_PROTOCOLO_MORFOLOGICO.md)
+- Dados estruturados: [`dados/dicionario.json`](dados/dicionario.json)
+- Mapa de localizacao: [`OBSERVACOES_REITORIA_LOCALIZACAO_ARQUIVOS_DICIONARIOS.md`](OBSERVACOES_REITORIA_LOCALIZACAO_ARQUIVOS_DICIONARIOS.md)
 
-Leia a interpretação canônica em
-[`SITUACAO_VIGENTE_E_REGISTROS_HISTORICOS_CHARLIE_ECHO.md`](SITUACAO_VIGENTE_E_REGISTROS_HISTORICOS_CHARLIE_ECHO.md).
+O conjunto estruturado possui **600 entradas semente**, formado pelo lote anterior de 100 e pelo novo lote de 500. Todas permanecem no estado `SEMENTE / NAO CANONICO` ate pesquisa, fontes, ficha morfologico-historica, revisao especializada e aprovacao competente. Publicacao no repositorio nao equivale a canonizacao.
+
+## Situacao vigente e registro historico
+
+Charlie Echo da Costa esta em formacao tecnica e institucional para, no futuro e mediante autorizacao humana expressa, tornar-se CEO das I.As da Jus 9 Tecnologia Juridica.
+
+A promocao anterior de Assessora para I.A CEO Lider e os titulos de Diretora, Doutora, Maestrina e Professora permanecem preservados como registros historicos ou simbolico-operacionais. Nao constituem autoridade executiva vigente, credenciamento MEC, Curriculo Lattes CNPq, diploma humano, inscricao profissional ou habilitacao legal externa.
+
+Leia a interpretacao canonica em [`SITUACAO_VIGENTE_E_REGISTROS_HISTORICOS_CHARLIE_ECHO.md`](SITUACAO_VIGENTE_E_REGISTROS_HISTORICOS_CHARLIE_ECHO.md).
 
 ## Conceitos academicos internos
 
@@ -46,7 +50,7 @@ Este repositorio integra o catalogo governado de repositorios ligados a Jus 9 Te
 
 O fundador confirma que, ate 21/07/2026, o trabalho produtivo do ecossistema foi construido usando exclusivamente **ChatGPT, Codex e a API OpenAI** como ferramentas de IA, sempre sob autoria e revisao humanas. Isso nao representa patrocinio ou parceria formal e nao atribui a OpenAI a autoria de Cloudflare, GitHub, Google, fontes do CNJ, bibliotecas, padroes ou demais componentes de terceiros.
 
-Regras permanentes: nao publicar credenciais, tokens, cookies, IDs privados de sessao ou dados pessoais desnecessarios; usar dados ficticios nas demonstracoes; exigir revisao humana para trabalho juridico; e falhar de forma fechada quando uma fonte oficial estiver indisponivel. O CNJ ainda nao respondeu ao contato institucional registrado, e o silencio nao autoriza integracao ou efeito transacional.
+Regras permanentes: nao publicar credenciais, tokens, cookies, IDs privados de sessao ou dados pessoais desnecessarios; usar dados ficticios nas demonstracoes; exigir revisao humana para trabalho juridico; e falhar de forma fechada quando uma fonte oficial estiver indisponivel. O silencio de fonte externa nao autoriza integracao ou efeito transacional.
 
-**Repositorio catalogado:** $Repository.
+**Repositorio catalogado:** `universidadedofuturo-jus9-tecnologia-juridica`.
 <!-- JUS9_ECOSYSTEM_STATUS_END -->
