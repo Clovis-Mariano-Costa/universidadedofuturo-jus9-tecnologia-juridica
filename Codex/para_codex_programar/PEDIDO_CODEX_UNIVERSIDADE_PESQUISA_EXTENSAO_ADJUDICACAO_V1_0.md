@@ -53,4 +53,4 @@ Nenhum deploy irreversível. Usar branch/PR, testes, revisão e reversão.
 ## Ensino
 Gerar material técnico para Charlie Echo com arquitetura, riscos, limites, testes, falhas e revisão.
 
-**Data real do registro:** 2026-08-08 07:33:00.00000 America/Sao_Paulo
+**Data real do registro:** 2026-08-08 07:45:00.00000 America/Sao_Paulo
