@@ -4,6 +4,17 @@ Repositorio publico do projeto Universidade do Futuro, vinculado ao ecossistema 
 
 Dominio previsto: https://universidadedofuturo.jus9tecnologia.com.br
 
+## LEIA ANTES DE PRODUZIR QUALQUER TRABALHO ACADEMICO
+
+**Regra canonica imperativa:** antes de iniciar, continuar, revisar, orientar, avaliar, converter ou publicar qualquer trabalho academico, leia obrigatoriamente [`00_LEIA_ANTES_DE_PRODUZIR_TRABALHO_ACADEMICO.md`](00_LEIA_ANTES_DE_PRODUZIR_TRABALHO_ACADEMICO.md).
+
+Esse Portico aponta para:
+- `ATOS_REITORIA/ATO_REITORIA_RIGOR_ACADEMICO_IA_V3.md`;
+- `ATOS_REITORIA/ESCALA_DEGRADE_RIGOR_ACADEMICO_V1.md`;
+- `MODELOS_ACADEMICOS/BLOCO_OBRIGATORIO_RIGOR_ACADEMICO_V1.md`.
+
+**O rigor deve viajar junto com a obra.** Uma I.A. externa, pesquisador, orientador ou avaliador deve conseguir identificar no proprio artefato o nivel de rigor aplicavel, o estado academico real, o que foi avaliado, as limitacoes e as pendencias.
+
 ## Dicionario Academico Interno
 
 A Universidade do Futuro mantem um Dicionario Academico Interno prioritario e de leitura obrigatoria para conceitos institucionais.
