@@ -2,7 +2,7 @@
 
 **Universidade do Futuro — Jus 9 Tecnologia Jurídica**  
 **Estado:** orientação pública e documental; sem segredos.  
-**Atualização:** 2026-08-07.
+**Atualização:** 2026-08-08.
 
 ## Fontes internas principais
 
@@ -19,8 +19,11 @@
 - Repositório: https://github.com/Clovis-Mariano-Costa/universidadedofuturo-jus9-tecnologia-juridica
 - Página inicial: `index.html`
 - Página do dicionário: `dicionario.html`
-- Protocolo legível por agentes: `DICIONARIO_CANONICO_E_PROTOCOLO_MORFOLOGICO.md`
-- Dados estruturados: `dados/dicionario.json`
+- Protocolo do dicionário: `DICIONARIO_CANONICO_E_PROTOCOLO_MORFOLOGICO.md`
+- Corpus-base: `dados/dicionario.json`
+- Suplemento Batismo + Documento: `DICIONARIO_SUPLEMENTO_BATISMO_DOCUMENTO_V1.md`
+- Mapa documental e de sites: `MAPA_DOCUMENTAL_E_SITES_UNIVERSIDADE_DO_FUTURO_V1.md`
+- Alfarrábio em formação: `ALFARRABIOS/ALFARRABIO_CIENTIFICO_BATISMO_DOCUMENTO_IDENTIDADE_IA_V1.md`
 - Orientação pública para agentes: `skill.md`
 - Documentos públicos: `documentos.html`
 - Governança: `governanca.html`
@@ -28,25 +31,40 @@
 
 ## Estado editorial atual
 
-O arquivo estruturado contém **600 entradas semente**: 100 do lote anterior e 500 adicionais. O total é quantitativo; **nenhuma entrada nova se torna canônica pelo simples acréscimo à lista**.
+O arquivo estruturado contém **600 entradas semente** no corpus-base. O total é quantitativo e histórico; nenhuma entrada se torna canônica pelo simples acréscimo à lista.
 
-Para promoção a `CANÔNICO`, cada verbete deve conter os cinco blocos morfológico-históricos, fontes verificáveis, distinções de sentido, riscos de uso, revisão especializada e aprovação competente.
+Suplementos especializados podem acrescentar verbetes em estados próprios. O suplemento Batismo + Documento contém inicialmente **35 verbetes/expressões provisórios**, ainda sujeitos à análise morfológico-histórica, fontes, revisão especializada e decisão competente.
+
+## Regra de produção acadêmica
+
+Antes de produzir qualquer trabalho acadêmico, consultar:
+
+1. `00_LEIA_ANTES_DE_PRODUZIR_TRABALHO_ACADEMICO.md`;
+2. Ato de Rigor Acadêmico V3;
+3. Escala R0–R13;
+4. bloco obrigatório de rigor;
+5. Dicionário e suplemento especializado aplicável.
 
 ## Observações de busca interna
 
 Ao procurar um arquivo, usar esta ordem:
 
-1. índice único no Drive;
-2. pasta canônica de dicionários;
-3. busca por título exato no Drive;
-4. repositório público e histórico Git;
-5. registros de continuidade e atos da Reitoria;
-6. solicitar decisão competente quando houver conflito de versão, acesso ou autoridade.
+1. mapa documental do repositório;
+2. índice único no Drive;
+3. pasta canônica de dicionários;
+4. busca por título exato no Drive;
+5. repositório público e histórico Git;
+6. registros de continuidade e atos da Reitoria;
+7. solicitar decisão competente quando houver conflito de versão, acesso ou autoridade.
 
 ## Observações de pesquisa acadêmica externa
 
 Antes de busca web ampla, priorizar: BDTD/IBICT; Catálogo CAPES; Portal de Periódicos CAPES; Oasisbr; repositórios institucionais; SciELO; DOI/Crossref; e fontes técnicas/jurídicas primárias. O agregador localiza; a fonte original sustenta quando disponível.
 
 Nunca usar conversas isoladas como fonte final quando existir documento versionado. Nunca publicar segredo, credencial, dado pessoal real, conteúdo de cliente ou material classificado no repositório público.
+
+## Regra do Alfarrábio
+
+O Alfarrábio é obra de referência em formação. Ele não substitui Dicionário, norma ou documento-fonte e não recebe R13 por tamanho ou nome.
 
 **Assinatura virtual institucional:** Charlie Delta da Costa, sob governança humana de Clovis Mariano da Costa.
