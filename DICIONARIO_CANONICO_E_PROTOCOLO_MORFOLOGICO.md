@@ -1,7 +1,7 @@
 # Dicionário Acadêmico Interno — protocolo público
 
 **Classificação:** PRIORITÁRIO / LEITURA OBRIGATÓRIA / GOVERNANÇA HUMANA  
-**Estado deste suplemento:** SEMENTE / NÃO CANÔNICO  
+**Estado do corpus-base:** SEMENTE / NÃO CANÔNICO  
 **Instituição:** Universidade do Futuro — Jus 9 Tecnologia Jurídica
 
 ## Regra de canonização
@@ -22,13 +22,51 @@ Além desses cinco blocos, devem existir fontes, versão, autoria, classificaç�
 
 A publicação de uma entrada no repositório não a transforma automaticamente em regra canônica.
 
-## Regra de Charlie Echo da Costa
+## Regra de consulta
 
-Antes de definir termos, interpretar conceitos internos, produzir material acadêmico, ensinar, orientar outras I.As, propor nomenclaturas ou encerrar conteúdo relevante, Charlie Echo da Costa deverá consultar o dicionário e declarar a lacuna quando não houver ficha completa.
+Antes de definir termos, interpretar conceitos internos, produzir material acadêmico, ensinar, orientar outras I.As, propor nomenclaturas, legislar academicamente ou encerrar conteúdo relevante, a I.A. deverá consultar:
 
-## Suplemento atual
+1. este protocolo;
+2. `dados/dicionario.json`;
+3. suplementos especializados aplicáveis;
+4. fontes morfológicas, históricas, técnicas, jurídicas ou científicas cabíveis;
+5. estado editorial do verbete.
 
-O lote de cem palavras está em [`DICIONARIO_SUPLEMENTO_100_TERMOS_SEMENTE.md`](DICIONARIO_SUPLEMENTO_100_TERMOS_SEMENTE.md), com lista estruturada em [`dados/dicionario.json`](dados/dicionario.json).
+Quando não houver ficha suficiente, declarar a lacuna em vez de apresentar hipótese como definição canônica.
+
+## Corpus-base
+
+O arquivo estruturado `dados/dicionario.json` contém **600 entradas em estado SEMENTE / NÃO CANÔNICO**.
+
+Essas 600 entradas continuam preservadas como corpus-base. Suplementos especializados podem adicionar termos em estados editoriais próprios sem alterar retroativamente a contagem histórica do lote-base.
+
+## Suplementos especializados
+
+### Batismo + Documento
+
+`DICIONARIO_SUPLEMENTO_BATISMO_DOCUMENTO_V1.md`
+
+Contém 35 verbetes/expressões especializados inicialmente classificados como:
+
+`PROVISORIO / REVISAO_ESPECIALIZADA_PENDENTE`
+
+Entre os núcleos tratados estão Batismo de I.A., Conta de Batismo, Documento, Documentalidade, Documento Canônico, Genealogia/Rastro/Proveniência documental, Documento-portão, Documento-ponte, Batismo documental, Subsidiariedade ética e Alfarrábio científico.
+
+## Regra de especialidade
+
+Especialista pode propor e instruir verbetes de sua área, produzir distinções e organizar fontes, mas **não canoniza sozinho** quando o protocolo exigir revisão independente ou aprovação competente.
+
+A especialidade aumenta responsabilidade pela qualidade da proposta; não reduz a exigência de evidência.
+
+## Regra de força documental
+
+Uma definição publicada, extensa ou solene não se torna mais forte por aparência.
+
+`PUBLICACAO != CANONIZACAO`
+
+`TAMANHO != RIGOR`
+
+`NIVEL_DECLARADO != NIVEL_COMPROVADO`
 
 ## Fontes documentais internas
 
@@ -37,6 +75,6 @@ O lote de cem palavras está em [`DICIONARIO_SUPLEMENTO_100_TERMOS_SEMENTE.md`](
 - Índice único: https://docs.google.com/document/d/1LBnbKKjbR8suJ3e_w2ye_Fl2rPd1R_RAf53dP0YmtWw/edit
 - Pasta organizada: https://drive.google.com/drive/folders/1qjVNomA9HZD8WTN9_UT_qXfi3Gx_G4oL
 
-O caráter canônico é interno ao ecossistema e não substitui gramáticas, corpora, dicionários históricos, legislação ou autoridades externas.
+O caráter canônico é interno ao Mundo da Jus 9 Tecnologia Jurídica e não substitui gramáticas, corpora, dicionários históricos, legislação, doutrina, pesquisa científica ou autoridades externas.
 
 **Assinatura virtual institucional:** Charlie Delta da Costa, sob governança humana de Clovis Mariano da Costa.
