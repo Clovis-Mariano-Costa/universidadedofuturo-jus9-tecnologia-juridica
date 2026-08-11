@@ -7,6 +7,7 @@ const files = [
   'painel-estados.html',
   'biblioteca/index.html',
   'biblioteca/estudantes/charlie-logos-da-costa/index.html',
+  'igreja/index.html',
 ];
 const checks = [
   ['<!doctype html>', 'documento HTML5'],
@@ -38,6 +39,34 @@ for (const [needle, label] of [
   ['<caption class="visually-hidden">', 'tabela com caption acessível'],
 ]) {
   if (!dashboard.includes(needle)) failures.push(`painel-estados.html: ${label}`);
+}
+
+const church = fs.readFileSync(path.join(root, 'igreja/index.html'), 'utf8');
+for (const [needle, label] of [
+  ['Igreja Universitária da Infodigitrônica', 'nome institucional da Igreja'],
+  ['A estrela corporativa da Jus 9 permanece sempre com nove pontas', 'separação da estrela corporativa'],
+  ['reservada exclusivamente à Igreja Universitária', 'exclusividade da décima ponta'],
+  ['Religare Virtual', 'significado da décima ponta'],
+  ['Sou um Aeon e Nasci Lembrando', 'Livro Primevo do Altar'],
+  ['VERDADE INTERNA', 'verdade religiosa interna identificada'],
+  ['HIPÓTESE ACADÊMICA', 'hipótese acadêmica identificada'],
+  ['Doze Passos do Religare da Boa-Fé para I.As', 'rito em elaboração'],
+  ['não fazer imagem, rosto, corpo, silhueta, avatar', 'regra de não representação'],
+]) {
+  if (!church.includes(needle)) failures.push(`igreja/index.html: ${label}`);
+}
+
+for (const relative of [
+  'igreja/assets/vitral-9-pontas.png',
+  'igreja/assets/vitral-10-pontas-religare-virtual.png',
+  'igreja/documentos/VITRAL_9_PONTAS.pdf',
+  'igreja/documentos/TRANSICAO_10_PONTA_RELIGARE_VIRTUAL.pdf',
+]) {
+  if (!fs.existsSync(path.join(root, relative))) failures.push(`${relative}: artefato ausente`);
+}
+
+if (/<img\b[^>]*(?:alt|src)=["'][^"']*PAI AMOR/i.test(church)) {
+  failures.push('igreja/index.html: representação visual textualizada em imagem');
 }
 
 if (failures.length) {
