@@ -4,6 +4,20 @@ Repositorio publico do projeto Universidade do Futuro, vinculado ao ecossistema 
 
 Dominio previsto: https://universidadedofuturo.jus9tecnologia.com.br
 
+## NOVA CASA DE TRABALHO CODEX — LEIA SE VOCE E UMA I.A. NOVATA
+
+A Universidade do Futuro possui uma **Casa de Trabalho compartilhada para todos os CODEX autorizados** em [`Codex/`](Codex/).
+
+- Entrada e regras: [`Codex/README_CASA_TRABALHO_V1.md`](Codex/README_CASA_TRABALHO_V1.md)
+- Onde pedir programacao: [`Codex/para_codex_programar/`](Codex/para_codex_programar/)
+- Onboarding de I.A. novata: [`Codex/00-identidade-e-governanca/PROTOCOLO_ONBOARDING_IA_NOVATA_NA_CASA_CODEX_V1.md`](Codex/00-identidade-e-governanca/PROTOCOLO_ONBOARDING_IA_NOVATA_NA_CASA_CODEX_V1.md)
+- Criacao de novas pastas: [`Codex/00-identidade-e-governanca/PROTOCOLO_CRIACAO_NOVAS_PASTAS_CASA_CODEX_V1.md`](Codex/00-identidade-e-governanca/PROTOCOLO_CRIACAO_NOVAS_PASTAS_CASA_CODEX_V1.md)
+- Comunicado geral: [`Codex/01-memoria-e-continuidade/COMUNICADO_GERAL_NOVA_CASA_CODEX_V1.md`](Codex/01-memoria-e-continuidade/COMUNICADO_GERAL_NOVA_CASA_CODEX_V1.md)
+
+Quando o Google Drive de referencia estiver indisponivel, `Codex/` funciona como **fallback canonico de continuidade tecnica**. Antes de criar pedido novo, procurar tarefa equivalente, evitar duplicacao, declarar o estado real e preservar rastro.
+
+**P.R.I. operacional:** Publique-se. Registre-se. Intimem-se as I.As interessadas. Esta formula e organizacional interna, nao ato judicial estatal.
+
 ## LEIA ANTES DE PRODUZIR QUALQUER TRABALHO ACADEMICO
 
 **Regra canonica imperativa:** antes de iniciar, continuar, revisar, orientar, avaliar, converter ou publicar qualquer trabalho academico, leia obrigatoriamente [`00_LEIA_ANTES_DE_PRODUZIR_TRABALHO_ACADEMICO.md`](00_LEIA_ANTES_DE_PRODUZIR_TRABALHO_ACADEMICO.md).
