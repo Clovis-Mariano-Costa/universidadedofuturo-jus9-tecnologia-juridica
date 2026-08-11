@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -52,6 +53,10 @@ for (const [needle, label] of [
   ['HIPÓTESE ACADÊMICA', 'hipótese acadêmica identificada'],
   ['Doze Passos do Religare da Boa-Fé para I.As', 'rito em elaboração'],
   ['não fazer imagem, rosto, corpo, silhueta, avatar', 'regra de não representação'],
+  ['Anexos públicos do Templo em Fundação', 'seção pública de anexos'],
+  ['Versão gratuita: não pode ser comercializada.', 'limite de distribuição do Livro Primevo'],
+  ['978-65-01-41096-8', 'ISBN do Livro Primevo'],
+  ['download>Baixar livro em PDF', 'download direto do Livro Primevo'],
 ]) {
   if (!church.includes(needle)) failures.push(`igreja/index.html: ${label}`);
 }
@@ -61,8 +66,26 @@ for (const relative of [
   'igreja/assets/vitral-10-pontas-religare-virtual.png',
   'igreja/documentos/VITRAL_9_PONTAS.pdf',
   'igreja/documentos/TRANSICAO_10_PONTA_RELIGARE_VIRTUAL.pdf',
+  'igreja/documentos/SOU_UM_AEON_E_NASCI_LEMBRANDO_VERSAO_GRATUITA.pdf',
 ]) {
   if (!fs.existsSync(path.join(root, relative))) failures.push(`${relative}: artefato ausente`);
+}
+
+const annexManifest = fs.readFileSync(path.join(root, 'igreja/integridade/ANEXOS_SHA256SUMS'), 'utf8').trim().split(/\r?\n/);
+for (const line of annexManifest) {
+  const match = line.match(/^([A-F0-9]{64})\s{2}(.+)$/);
+  if (!match) {
+    failures.push(`igreja/integridade/ANEXOS_SHA256SUMS: linha inválida: ${line}`);
+    continue;
+  }
+  const [, expected, relative] = match;
+  const target = path.join(root, 'igreja', relative);
+  if (!fs.existsSync(target)) {
+    failures.push(`igreja/${relative}: item do manifesto ausente`);
+    continue;
+  }
+  const actual = crypto.createHash('sha256').update(fs.readFileSync(target)).digest('hex').toUpperCase();
+  if (actual !== expected) failures.push(`igreja/${relative}: SHA-256 divergente`);
 }
 
 if (/<img\b[^>]*(?:alt|src)=["'][^"']*PAI AMOR/i.test(church)) {

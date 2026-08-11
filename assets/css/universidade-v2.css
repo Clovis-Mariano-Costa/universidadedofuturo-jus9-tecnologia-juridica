@@ -535,6 +535,126 @@ main:focus{outline:none}
   grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));
   gap:1rem;
 }
+.church-annexes{
+  padding-top:clamp(1.25rem,3vw,2rem);
+  border-top:1px solid var(--udf-line);
+}
+.church-annex-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1rem;
+}
+.church-annex-card{
+  display:grid;
+  grid-template-rows:auto auto auto auto 1fr auto;
+  gap:1rem;
+  min-width:0;
+  padding:1.2rem;
+  border:1px solid var(--udf-line);
+  border-top:4px solid var(--udf-gold);
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 14px 32px rgba(5,11,20,.08);
+}
+.church-annex-card-primeval{background:linear-gradient(180deg,#fffaf0,#fff)}
+.church-annex-card-cyan{border-top-color:var(--udf-cyan)}
+.church-annex-card>header{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:.55rem;
+}
+.church-annex-number{
+  color:#70511c;
+  font-size:.72rem;
+  font-weight:950;
+  letter-spacing:.11em;
+}
+.church-card-kicker{
+  margin:0;
+  color:#70511c!important;
+  font-size:.76rem;
+  font-weight:900;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.church-annex-card h3{
+  margin:.35rem 0 .5rem;
+  font-size:clamp(1.55rem,2.6vw,2.25rem);
+}
+.church-annex-facts{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:.5rem;
+  margin:0;
+}
+.church-annex-facts div{
+  min-width:0;
+  padding:.7rem;
+  border:1px solid #e7dcc3;
+  border-radius:12px;
+  background:#fffdf8;
+}
+.church-annex-facts dt{
+  color:#70511c;
+  font-size:.67rem;
+  font-weight:950;
+  letter-spacing:.055em;
+  text-transform:uppercase;
+}
+.church-annex-facts dd{
+  margin:.2rem 0 0;
+  color:var(--udf-ink);
+  font-size:.86rem;
+  font-weight:850;
+  overflow-wrap:anywhere;
+}
+.church-annex-notice{
+  align-self:start;
+  padding:.85rem;
+  border-left:4px solid var(--udf-cyan);
+  border-radius:0 12px 12px 0;
+  background:#f1fbfd;
+  color:#264157;
+}
+.church-annex-notice p{margin:.35rem 0 0}
+.church-annex-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.6rem;
+  align-self:end;
+}
+.church-annex-actions .btn{padding:.7rem .75rem;text-align:center}
+.church-dark-btn{background:var(--udf-navy);color:#eef6ff}
+.church-annex-card details{
+  padding-top:.8rem;
+  border-top:1px solid var(--udf-line);
+}
+.church-annex-card summary{
+  color:#70511c;
+  font-size:.82rem;
+  font-weight:900;
+  cursor:pointer;
+}
+.church-annex-card code{
+  display:block;
+  margin-top:.55rem;
+  padding:.65rem;
+  border-radius:10px;
+  background:#f1ede4;
+  color:#24394f;
+  font-size:.7rem;
+  overflow-wrap:anywhere;
+}
+.church-annex-boundary{
+  margin-top:1rem;
+  padding:1rem 1.15rem;
+  border:1px solid #d7c18a;
+  border-radius:15px;
+  background:#fffaf0;
+}
+.church-annex-boundary p{margin:.35rem 0 0}
 .church-card{
   padding:1.25rem;
   border:1px solid var(--udf-line);
@@ -724,6 +844,7 @@ main:focus{outline:none}
   .church-steps,
   .church-law{grid-template-columns:1fr}
   .church-vitral-grid{grid-template-columns:1fr}
+  .church-annex-grid{grid-template-columns:1fr}
   .church-law-flow{grid-template-columns:1fr}
 }
 @media(max-width:760px){
@@ -741,6 +862,7 @@ main:focus{outline:none}
   .church-shell{border-radius:18px;gap:2.4rem}
   .church-section-heading{display:grid;align-items:start}
   .church-vitral-card{grid-template-columns:1fr}
+  .church-annex-facts,.church-annex-actions{grid-template-columns:1fr}
   .church-hero-figure img{max-height:560px}
   .church-actions-row .btn{width:100%}
 }
