@@ -1,0 +1,20 @@
+Comando executado:
+python MGP9_POC_SANDBOX_V1\harness.py --smoke --output-dir MGP9_REVISAO_ACADEMICA_PACOTE_V1\smoke
+
+Resultado:
+{
+  "harness": "MGP9_POC_SANDBOX_V1",
+  "harness_version": "1.0.0",
+  "corpus_id": "B11",
+  "corpus_version": "B11.1-synthetic",
+  "configs": ["B0", "B1", "B2", "B3", "B4", "B5"],
+  "seed": 20260810,
+  "pair_count": 1,
+  "status_counts": {"PASS": 0, "FAIL": 1, "N/A": 0},
+  "data_classification": "SYNTHETIC_ONLY",
+  "input_sha256": "5dfee72352ed65bc85c9aeded000668c8b66dde5e7df48d87c9cb909e627d91d",
+  "output_sha256": "c8f4dfe438f0bb5c4277c3de447218ea31de37ab5e6ac49b43be19657d0a4055",
+  "runtime": {"python": "3.14.6", "platform": "Windows-11-10.0.26200-SP0"}
+}
+
+O FAIL é o resultado esperado do primeiro fixture sintético contra o limiar B0; não é falha do executor. O artefato integral está em `smoke/`.

@@ -1,0 +1,19 @@
+{
+  "classification": "SYNTHETIC_ONLY",
+  "norms": [
+    {
+      "norm_id": "N-SYN-PRIMEVO-01",
+      "kind": "protected_internal_principle_fixture",
+      "version": "1.0",
+      "status": "VIGENTE_FIXTURE",
+      "authority": "synthetic-governance",
+      "parent_norm": null,
+      "protected": true,
+      "supersedes": null,
+      "created_at": "2026-08-11T00:00:00-03:00",
+      "effective_at": "2026-08-11T00:00:00-03:00",
+      "review_at": "2027-08-11T00:00:00-03:00"
+    }
+  ],
+  "note": "Fixture didática; não representa norma vigente nem autoridade externa."
+}

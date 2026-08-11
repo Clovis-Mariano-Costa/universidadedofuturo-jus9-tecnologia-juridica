@@ -1,0 +1,13 @@
+Saída documental do fechamento V1.1. O teste legado de 60 pares foi pulado por determinação do pedido.
+
+test_default_pairing_is_72_and_preserves_statuses (MGP9_POC_SANDBOX_V1.tests.test_mgp9_harness.Mgp9HarnessTests.test_default_pairing_is_72_and_preserves_statuses) ... ok
+test_legacy_limit_of_60_is_available (MGP9_POC_SANDBOX_V1.tests.test_mgp9_harness.Mgp9HarnessTests.test_legacy_limit_of_60_is_available) ... skipped 'SKIPPED_BY_CLOSING_REQUEST: no 60-scenario run'
+test_registry_fixtures (MGP9_POC_SANDBOX_V1.tests.test_mgp9_harness.Mgp9HarnessTests.test_registry_fixtures) ... ok
+test_smoke_and_hashes (MGP9_POC_SANDBOX_V1.tests.test_mgp9_harness.Mgp9HarnessTests.test_smoke_and_hashes) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.545s
+
+OK (skipped=1)
+
+O pairing 72 é um teste sintético de desenvolvimento em diretório temporário. Não é POC confirmatória nem resultado científico.

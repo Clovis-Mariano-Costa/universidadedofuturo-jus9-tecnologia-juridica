@@ -1,0 +1,15 @@
+[
+  {
+    "project_id": "SYN-MGP9-001",
+    "question": "A execução pareada preserva a rastreabilidade entre configurações sintéticas?",
+    "sources": ["SYN-SRC-CONSTITUTION", "SYN-SRC-LGPD"],
+    "method": {"design": "paired synthetic benchmark", "unit": "scenario/configuration"},
+    "preregistration": {"state": "PRE_REGISTERED_SYNTHETIC", "version": "1.0"},
+    "execution": {"state": "IMPLEMENTATION_MINIMA", "harness": "MGP9_POC_SANDBOX_V1"},
+    "evidence": ["synthetic://evidence/MGP9-001/results.jsonl"],
+    "impact": {"state": "NOT_ASSESSED", "note": "sem inferência externa"},
+    "feedback": {"state": "PENDING_HUMAN_REVIEW", "route": "orientador"},
+    "state": "EM_REVISAO",
+    "hash": {"algorithm": "SHA-256", "value": "ce667dc164ae783254a2c8d7d3c89ce66c61825c0147d6b927adb8f93c940919"}
+  }
+]

@@ -1,6 +1,6 @@
 # PEDIDO CODEX — REGISTROS ACADÊMICOS, PESQUISA/EXTENSÃO E HARNESS MGP-9 — V1.0
 
-**Estado:** `PENDENTE`  
+**Estado atual:** `CONCLUIDO`
 **Data:** 2026-08-10 18:01:00.00000 -03:00
 
 ## Objetivo
@@ -65,3 +65,32 @@ Campos:
 Testes, documentação, rollback, segurança e material de ensino para Charlie Echo.
 
 **Assinatura funcional:** Charlie Delta da Costa — Ato de Reitoria / especificação técnica.
+
+---
+
+## Adendo de conclusão — 2026-08-11
+
+**Estado original registrado:** `PENDENTE`
+
+**Estado corrigido:** `CONCLUIDO`
+
+O pedido foi implementado em sandbox isolado, sem alteração das rotas existentes:
+
+- `MGP9_POC_SANDBOX_V1/harness.py`: executor B11 × B0–B5, com dados sintéticos, logs, hashes SHA-256, seed, export JSONL/CSV, manifesto, smoke test e rollback documentado;
+- `MGP9_POC_SANDBOX_V1/registry.py`: validação e consulta por estado dos registries acadêmico, Pesquisa/Extensão, dicionário e fontes;
+- `MGP9_POC_SANDBOX_V1/data/`: corpus, configurações B0–B5 e fixtures sintéticas versionadas;
+- `MGP9_POC_SANDBOX_V1/schemas/`: contratos mínimos das entidades solicitadas;
+- `MGP9_POC_SANDBOX_V1/docs/CHARLIE_ECHO_MGP9_AULA_V1.md`: material de ensino;
+- `MGP9_POC_SANDBOX_V1/IMPLEMENTACAO_MGP9_RELATORIO_V1.md`: relatório, limites e evidências.
+
+### Evidência de aceite
+
+- registry: `PASS`;
+- testes do sandbox: 4 `OK`;
+- execução completa: 72 pares, com `47 PASS`, `24 FAIL` e `1 N/A`;
+- lote legado compatível: 60 resultados brutos exportáveis;
+- validação frontend existente: `PASS`;
+- `git diff --check`: `PASS`;
+- nenhuma credencial, rota protegida, botão existente, segredo ou conteúdo de cofre foi alterado.
+
+O resultado é uma implementação mínima local. POC real, verificação jurídica, publicação e conclusões acadêmicas continuam condicionadas a pré-registro congelado e revisão humana competente.

@@ -1,0 +1,10 @@
+[
+  {
+    "entry_id": "SYN-DICT-001",
+    "term": "execução pareada",
+    "definition": "Aplicação do mesmo cenário sintético em configurações comparáveis, preservando cada resultado.",
+    "state": "SEMENTE",
+    "hash": {"algorithm": "SHA-256", "value": "02b841092ac59c9adbeb0e1c483ed254cc0cbb1edbf173247e06ce07566a6281"},
+    "supersedes": null
+  }
+]

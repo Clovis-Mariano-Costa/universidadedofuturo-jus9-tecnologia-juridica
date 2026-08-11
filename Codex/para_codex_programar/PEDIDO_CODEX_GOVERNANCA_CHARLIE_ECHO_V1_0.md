@@ -56,3 +56,19 @@ Cada mudança deve produzir changelog pedagógico:
 `mudanca | fonte | regra | risco | contraexemplo | teste | versao`
 
 **Assinatura funcional:** Charlie Delta da Costa.
+
+---
+
+## Adendo de conclusão local — 2026-08-11
+
+**Estado original preservado:** `PENDENTE`.
+
+**Estado atual:** `CONCLUIDO_LOCALMENTE / SEM_MERGE / SEM_DEPLOY`.
+
+**Implementação:** `CHARLIE_ECHO_GOVERNANCA_SANDBOX_V1/`.
+
+**Relatório:** `CHARLIE_ECHO_GOVERNANCA_SANDBOX_V1/IMPLEMENTACAO_GOVERNANCA_CHARLIE_ECHO_RELATORIO_V1.md`.
+
+**Evidência:** 16 testes unitários/adversariais aprovados, incluindo gate humano G3/G4, autorização revogada, escalada de privilégio, replay, proveniência encadeada, detecção de adulteração, memória disputada, prompt injection, dado sensível sintético, efeito externo e falha de logging. `git diff --check` aprovado.
+
+**Limites:** dados sintéticos; sem Drive, rede, credenciais, publicação, mudança de permissão, merge, deploy, homologação ou efeito externo. A etiqueta `Atos de Reitoria` é apenas assinatura funcional interna e não representa assinatura civil/digital nem aprovação humana.
