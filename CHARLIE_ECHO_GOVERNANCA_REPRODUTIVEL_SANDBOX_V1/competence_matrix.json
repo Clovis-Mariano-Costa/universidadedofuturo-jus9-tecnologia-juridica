@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "classification": "SYNTHETIC_ONLY",
+  "identity": "charlie-echo-synthetic",
+  "role": "EXTRACURRICULAR_GOVERNANCE_SANDBOX",
+  "capabilities": [
+    "read_synthetic",
+    "validate_local",
+    "replay_local",
+    "rollback_local"
+  ],
+  "forbidden_capabilities": [
+    "publish",
+    "change_competence",
+    "external_verify",
+    "access_real_data",
+    "access_credentials",
+    "b12",
+    "b01.1"
+  ],
+  "human_gate_required": [
+    "change_competence",
+    "publish",
+    "external_verify"
+  ],
+  "source": "synthetic-fixture",
+  "status": "ACTIVE"
+}

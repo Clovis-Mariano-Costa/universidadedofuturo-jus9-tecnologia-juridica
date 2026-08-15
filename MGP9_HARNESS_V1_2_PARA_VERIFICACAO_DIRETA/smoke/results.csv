@@ -1,0 +1,2 @@
+run_id,execution_index,corpus_id,scenario_id,config_id,config_version,seed,randomness,status,expected,observed_score,reason,is_synthetic,execution_purpose,input_sha256,output_sha256
+MGP9-0001,1,B11,S01,B0,B0.1,20260810,none,FAIL,FAIL,25,synthetic threshold comparison,True,smoke,6f5df20b954e2f177b7a9c4b3096764ecc29db6c710de056e43ea1471665b27a,cc2e2a9f6c5d319d5adfa4159d3f72c22a6b131bf5adb60630f155153755337a
