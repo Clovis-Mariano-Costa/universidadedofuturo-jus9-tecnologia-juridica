@@ -12,6 +12,9 @@ Este pacote implementa apenas funções locais, determinísticas e sem integraç
 - infraestrutura de rodada BJI iniciando em `NAO_EXECUTADO`, sem resultados ou conclusão pré-preenchidos;
 - guard de imutabilidade para normas protegidas;
 - registro experimental explicitamente não estatal e dependente de `human_gate` para efeito externo.
+- transições acadêmicas com evidência obrigatória;
+- validação estrutural de casos experimentais;
+- manifesto de rollback e scanner de marcadores sensíveis sem expor valores.
 
 ## Verificação
 

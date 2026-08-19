@@ -15,7 +15,8 @@ Foi criado `CODEX/runtime/` com funções locais e determinísticas para:
 - registro de aprendizagem com tentativa, estado e revisão humana;
 - infraestrutura BJI iniciando em `NAO_EXECUTADO` sem resultados ou conclusões;
 - imutabilidade de normas protegidas;
-- adjudicação explicitamente `INTERNAL_EXPERIMENTAL`, sem efeito estatal automático.
+- adjudicação explicitamente `INTERNAL_EXPERIMENTAL`, sem efeito estatal automático;
+- transições acadêmicas com evidência obrigatória, manifesto de rollback e scanner de marcadores sensíveis.
 
 ## Evidência local
 
@@ -26,7 +27,8 @@ cd SITE_SOURCE/CODEX/runtime
 npm test
 ```
 
-Resultado: **8 testes aprovados, 0 falhas**.
+Resultado inicial: **8 testes aprovados, 0 falhas**.  
+Após a extensão de governança acadêmica: **11 testes aprovados, 0 falhas**.
 
 O teste não gera imagem, não usa dado real, não executa a POC MGP-9 e não publica.
 

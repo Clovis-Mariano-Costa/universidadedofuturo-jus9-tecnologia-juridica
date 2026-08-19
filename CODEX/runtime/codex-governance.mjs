@@ -13,6 +13,15 @@ export const LEARNING_STATES = Object.freeze([
   'PRECISA_REVISAO'
 ]);
 
+export const ACADEMIC_STATES = Object.freeze([
+  'RASCUNHO',
+  'PRE_REGISTRADO',
+  'EXECUTADO',
+  'RESULTADOS_REGISTRADOS',
+  'EM_REVISAO',
+  'PUBLICADO'
+]);
+
 export function canonicalText(value) {
   return String(value ?? '').replace(/\r\n?/g, '\n');
 }
@@ -204,4 +213,86 @@ export function auditResearchRun(run) {
   if (!run.protocol_version) errors.push('protocol_version is required');
   if (!run.corpus_hash) errors.push('corpus_hash is required');
   return { valid: errors.length === 0, errors };
+}
+
+const academicTransitions = Object.freeze({
+  RASCUNHO: ['PRE_REGISTRADO'],
+  PRE_REGISTRADO: ['EXECUTADO'],
+  EXECUTADO: ['RESULTADOS_REGISTRADOS'],
+  RESULTADOS_REGISTRADOS: ['EM_REVISAO'],
+  EM_REVISAO: ['PUBLICADO'],
+  PUBLICADO: []
+});
+
+export function createAcademicProject(input = {}) {
+  return {
+    project_id: input.project_id ?? null,
+    faculty: input.faculty ?? null,
+    problem: input.problem ?? null,
+    hypothesis: input.hypothesis ?? null,
+    sources: input.sources ?? [],
+    ethics: input.ethics ?? null,
+    data_policy: input.data_policy ?? null,
+    preregistration_ref: input.preregistration_ref ?? null,
+    hash: input.hash ?? null,
+    maturity: input.maturity ?? 'RASCUNHO',
+    history: [],
+    created_at: input.created_at ?? new Date().toISOString()
+  };
+}
+
+export function transitionAcademicProject(project, nextState, evidence = {}) {
+  const current = project?.maturity;
+  if (!ACADEMIC_STATES.includes(nextState) || !academicTransitions[current]?.includes(nextState)) {
+    throw new Error(`invalid academic transition: ${current} -> ${nextState}`);
+  }
+  if (!evidence.actor || !evidence.evidence_ref) {
+    throw new Error('academic transition requires actor and evidence_ref');
+  }
+  return {
+    ...project,
+    maturity: nextState,
+    history: [...project.history, {
+      from: current,
+      to: nextState,
+      actor: evidence.actor,
+      evidence_ref: evidence.evidence_ref,
+      at: evidence.at ?? new Date().toISOString()
+    }]
+  };
+}
+
+export function validateAdjudicationCase(record = {}) {
+  const required = ['case_id', 'judge_ai', 'model_version', 'jurisdiction_label', 'evidence_hash', 'conflict_check', 'human_gate', 'rollback_ref'];
+  const missing = required.filter((field) => record[field] === undefined || record[field] === null || record[field] === '');
+  const errors = [...missing];
+  if (record.jurisdiction_label !== 'INTERNAL_EXPERIMENTAL') errors.push('jurisdiction_label');
+  if (record.decision !== null && record.status === 'NAO_EXECUTADO') errors.push('decision_before_execution');
+  return { valid: errors.length === 0, errors };
+}
+
+export function scanSecretMarkers(text) {
+  const value = canonicalText(text);
+  const patterns = [
+    /-----BEGIN [A-Z ]*PRIVATE KEY-----/i,
+    /\b(api[_-]?key|client[_-]?secret|access[_-]?token|password)\s*[:=]/i,
+    /\bghp_[A-Za-z0-9]{20,}\b/,
+    /\bsk-[A-Za-z0-9_-]{20,}\b/
+  ];
+  return {
+    clean: !patterns.some((pattern) => pattern.test(value)),
+    markers: patterns.filter((pattern) => pattern.test(value)).map(String)
+  };
+}
+
+export function createRollbackManifest(files = []) {
+  return {
+    version: '1',
+    reversible: true,
+    files: files.map((file) => ({
+      path: file.path,
+      action: file.action ?? 'add',
+      rollback: file.rollback ?? 'revert_commit'
+    }))
+  };
 }

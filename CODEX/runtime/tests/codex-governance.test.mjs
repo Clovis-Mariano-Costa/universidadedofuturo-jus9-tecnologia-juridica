@@ -8,13 +8,18 @@ import {
   auditResearchRun,
   canonicalText,
   createAdjudicationRecord,
+  createAcademicProject,
+  createRollbackManifest,
   createLearningRecord,
   createResearchRun,
   hashDeterministic,
   lintNormRecord,
   recordLearningAttempt,
   reviewLearningAttempt,
+  scanSecretMarkers,
   serializeDeterministic,
+  transitionAcademicProject,
+  validateAdjudicationCase,
   validateExecutionMetadata
 } from '../codex-governance.mjs';
 
@@ -72,4 +77,25 @@ test('starts research infrastructure with no results and no conclusion', () => {
   assert.equal(run.status, 'NAO_EXECUTADO');
   assert.deepEqual(run.results, []);
   assert.equal(auditResearchRun(run).valid, true);
+});
+
+test('enforces academic transitions and evidence', () => {
+  let project = createAcademicProject({ project_id: 'P-1' });
+  assert.throws(() => transitionAcademicProject(project, 'PUBLICADO', { actor: 'codex', evidence_ref: 'e1' }));
+  project = transitionAcademicProject(project, 'PRE_REGISTRADO', { actor: 'human', evidence_ref: 'prereg-1' });
+  assert.equal(project.maturity, 'PRE_REGISTRADO');
+  assert.equal(project.history.length, 1);
+  assert.throws(() => transitionAcademicProject(project, 'EXECUTADO', { actor: 'codex' }));
+});
+
+test('validates experimental adjudication fields and rollback', () => {
+  const record = createAdjudicationRecord({ case_id: 'case-2', judge_ai: 'sandbox', model_version: 'test', evidence_hash: 'sha256:x', conflict_check: 'CLEAR', rollback_ref: 'rb-1' });
+  assert.equal(validateAdjudicationCase(record).valid, true);
+  assert.equal(createRollbackManifest([{ path: 'CODEX/runtime/x', action: 'add' }]).reversible, true);
+});
+
+test('detects secret markers without exposing values', () => {
+  assert.equal(scanSecretMarkers('normal public text').clean, true);
+  assert.equal(scanSecretMarkers('api_key=REDACTED').clean, false);
+  assert.equal(scanSecretMarkers('api_key=REDACTED').markers.length, 1);
 });
