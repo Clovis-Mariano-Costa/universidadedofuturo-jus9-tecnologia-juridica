@@ -1,6 +1,6 @@
 # TAREFA CODEX 004 — Infraestrutura auditável para pesquisa BJI C1–C8
 
-`ESTADO = PENDENTE`
+`ESTADO = EM_REVISAO`
 
 **Origem:** Projeto de Pesquisa BJI e protocolo de validação C1–C8.  
 **Objetivo:** preparar infraestrutura técnica para futura pesquisa empírica sem fabricar resultados.
@@ -26,3 +26,7 @@
 ## Ensino Charlie Echo
 
 O conhecimento técnico gerado deve ser convertido em material de aula sobre evidência, experimento, versão, falsificabilidade e limites.
+
+## Registro Codex — 2026-08-19
+
+Foi criada infraestrutura local que começa em `NAO_EXECUTADO`, sem resultados ou conclusão pré-preenchidos, com protocolo, corpus hash, entradas, configuração e auditoria. Nenhum experimento BJI foi executado nesta rodada.

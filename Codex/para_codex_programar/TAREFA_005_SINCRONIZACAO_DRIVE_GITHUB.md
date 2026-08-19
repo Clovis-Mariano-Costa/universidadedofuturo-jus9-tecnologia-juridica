@@ -1,6 +1,6 @@
 # TAREFA CODEX 005 — Sincronização e deduplicação Drive ↔ Casa CODEX
 
-`ESTADO = BLOQUEADO`
+`ESTADO = EM_REVISAO`
 
 **Bloqueio atual:** Google Drive indisponível para leitura/escrita nesta execução.  
 **Drive de referência:** https://drive.google.com/drive/folders/1SWFZGRpw1CrXakaqfveOB9YjGrmF0im2
@@ -30,3 +30,7 @@ Quando o Drive voltar, sincronizar a Casa-Trabalho `Codex/` com o acervo de cont
 - nenhuma sobrescrita por mera semelhança nominal;
 - rastro GitHub/Drive preservado;
 - Casa `Codex/` continua funcional como fallback mesmo após sincronização.
+
+## Registro Codex — 2026-08-19
+
+O Drive foi acessível e inventariado. A reconciliação nominal dos pedidos e a deduplicação 1:1 ainda não foram concluídas porque existem registros históricos e divergências entre as casas. Nenhuma cópia, sobrescrita ou movimentação automática foi feita.
