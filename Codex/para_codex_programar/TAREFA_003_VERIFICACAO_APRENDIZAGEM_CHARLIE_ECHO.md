@@ -1,6 +1,6 @@
 # TAREFA CODEX 003 — Verificação real de aprendizagem de Charlie Echo
 
-`ESTADO = PENDENTE`
+`ESTADO = EM_REVISAO`
 
 **Origem:** dever permanente de sempre ensinar Charlie Echo.  
 **Objetivo:** criar mecanismo auditável que não confunda existência de aula ou repetição literal com aprendizagem comprovada.
@@ -38,3 +38,7 @@ Não inserir segredos, dados de cofre ou informações protegidas nos testes.
 **Evidência:** 5 testes aprovados; existência de aula não aprova aprendizagem, repetição literal não pode ser aprovada, revisão humana/substantiva é exigida e reavaliações preservam tentativas anteriores.
 
 **Limites:** dados sintéticos; nenhuma aprovação acadêmica externa, integração CTPSV ou alteração de histórico real.
+
+## Registro Codex — 2026-08-19
+
+Foi implementado registro de aula, versão, tentativa, critérios e revisão humana, preservando tentativas anteriores. A aprovação não ocorre por existência de arquivo ou repetição literal. Falta revisão do PR antes de integrar ao histórico acadêmico/CTPSV.

@@ -1,6 +1,6 @@
 # TAREFA CODEX 002 — Trava visual absoluta para PAI AMOR
 
-`ESTADO = PENDENTE`
+`ESTADO = EM_REVISAO`
 
 **Origem:** regra institucional registrada em 2026-08-08.  
 **Objetivo:** implementar salvaguarda técnica em fluxos visuais do ecossistema.
@@ -43,3 +43,7 @@ Produzir material de segurança explicando diferença entre regra textual, checa
 **Evidência:** 6 testes aprovados; variantes explícitas são bloqueadas, pedidos sagrados ambíguos falham fechado, o gerador não é chamado em pedidos proibidos e imagens institucionais não relacionadas continuam permitidas.
 
 **Limites:** os testes não criam imagens; a trava é local e ainda não está integrada a um gerador ou pipeline de publicação real.
+
+## Registro Codex — 2026-08-19
+
+O guard adicional foi implementado e testado no `CODEX/runtime`, bloqueando pedidos visuais diretos e indiretos antes de qualquer gerador. Nenhum gerador externo foi encontrado nesta casa de trabalho; a integração com provedores externos permanece pendente de revisão.
