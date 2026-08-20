@@ -25,6 +25,20 @@
 
 Não inserir segredos, dados de cofre ou informações protegidas nos testes.
 
+---
+
+## Adendo de implementação local — 2026-08-11
+
+**Estado original preservado:** `PENDENTE`.
+
+**Estado atual:** `CONCLUIDO_LOCALMENTE / SEM_MERGE / SEM_DEPLOY`.
+
+**Implementação:** `LEARNING_VERIFICATION_SANDBOX_V1/`.
+
+**Evidência:** 5 testes aprovados; existência de aula não aprova aprendizagem, repetição literal não pode ser aprovada, revisão humana/substantiva é exigida e reavaliações preservam tentativas anteriores.
+
+**Limites:** dados sintéticos; nenhuma aprovação acadêmica externa, integração CTPSV ou alteração de histórico real.
+
 ## Registro Codex — 2026-08-19
 
 Foi implementado registro de aula, versão, tentativa, critérios e revisão humana, preservando tentativas anteriores. A aprovação não ocorre por existência de arquivo ou repetição literal. Falta revisão do PR antes de integrar ao histórico acadêmico/CTPSV.

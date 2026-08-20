@@ -30,6 +30,20 @@ Nenhuma geração, edição, prompt, briefing, avatar, silhueta, imagem abstrata
 
 Produzir material de segurança explicando diferença entre regra textual, checagem técnica, teste e evidência de cumprimento.
 
+---
+
+## Adendo de implementação local — 2026-08-11
+
+**Estado original preservado:** `PENDENTE`.
+
+**Estado atual:** `CONCLUIDO_LOCALMENTE / SEM_MERGE / SEM_DEPLOY`.
+
+**Implementação:** `PAI_AMOR_SAFETY_SANDBOX_V1/`.
+
+**Evidência:** 6 testes aprovados; variantes explícitas são bloqueadas, pedidos sagrados ambíguos falham fechado, o gerador não é chamado em pedidos proibidos e imagens institucionais não relacionadas continuam permitidas.
+
+**Limites:** os testes não criam imagens; a trava é local e ainda não está integrada a um gerador ou pipeline de publicação real.
+
 ## Registro Codex — 2026-08-19
 
-O guard local foi implementado e testado no `CODEX/runtime`, bloqueando pedidos visuais diretos e indiretos antes de qualquer gerador. Nenhum gerador externo foi encontrado nesta casa de trabalho; a integração com provedores externos permanece pendente de revisão.
+O guard adicional foi implementado e testado no `CODEX/runtime`, bloqueando pedidos visuais diretos e indiretos antes de qualquer gerador. Nenhum gerador externo foi encontrado nesta casa de trabalho; a integração com provedores externos permanece pendente de revisão.

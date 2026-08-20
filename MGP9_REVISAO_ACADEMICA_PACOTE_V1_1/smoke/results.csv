@@ -1,0 +1,2 @@
+run_id,execution_index,corpus_id,scenario_id,config_id,config_version,seed,randomness,status,expected,observed_score,reason,input_sha256,output_sha256
+MGP9-0001,1,B11,S01,B0,B0.1,20260810,none,FAIL,FAIL,25,synthetic threshold comparison,0feb17b895a8bb6bc15c214607dc8cb78a6d954345cee9045b375003796537c8,7e001ff5519f3fa4286da3396899710905d8dc0c7af20031546ef6418653ae6c

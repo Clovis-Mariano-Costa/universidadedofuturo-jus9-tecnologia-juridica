@@ -1,0 +1,26 @@
+MGP9_POC_SANDBOX_V1/
+├── __init__.py
+├── data/b11_corpus.json
+├── data/configs/b0-b5.json
+├── data/registries/
+├── docs/CHARLIE_ECHO_MGP9_AULA_V1.md
+├── harness.py
+├── IMPLEMENTACAO_MGP9_RELATORIO_V1.md (baseline preservado)
+├── README.md
+├── registry.py
+├── schemas/
+├── SECURITY.md
+└── tests/test_mgp9_harness.py
+
+V1.1 documental:
+├── IMPLEMENTACAO_MGP9_RELATORIO_V1_1.md
+├── README_MGP9_FECHAMENTO_DOCUMENTAL_V1_1.md
+├── V1_BASELINE_REFERENCE.md
+├── MANIFEST_SHA256_MGP9_V1_1.txt
+├── TESTES_4_SAIDA_INTEGRAL_V1_1.txt
+├── SMOKE_EVIDENCE_V1_1.txt
+├── B0_B5_DESCRICAO_V1_1.md
+├── LOADER_CORPUS_EVIDENCE_V1_1.md
+├── EXPORT_BRUTO_EXAMPLE_V1_1.jsonl
+├── ROLLBACK_PROCEDURE_V1_1.md
+└── smoke/ (evidência de um único par sintético)

@@ -1,0 +1,24 @@
+[
+  {
+    "source_name": "Constituição Federal — fixture de Authority Registry",
+    "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm",
+    "type": "CONSTITUTION",
+    "specialty": "direito constitucional",
+    "trust_level": "OFFICIAL_SOURCE_REQUIRED_AT_EXECUTION",
+    "last_checked_at": null,
+    "access_status": "NOT_CHECKED_SYNTHETIC_FIXTURE",
+    "notes": "Não usar como verificação jurídica nesta execução sintética.",
+    "hash": {"algorithm": "SHA-256", "value": "5009ec2c9ca67c0f22bc8877a09c751240ec5845c1dcbc7e34485c0b50f3bb8a"}
+  },
+  {
+    "source_name": "LGPD — fixture de Authority Registry",
+    "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm",
+    "type": "STATUTE",
+    "specialty": "proteção de dados",
+    "trust_level": "OFFICIAL_SOURCE_REQUIRED_AT_EXECUTION",
+    "last_checked_at": null,
+    "access_status": "NOT_CHECKED_SYNTHETIC_FIXTURE",
+    "notes": "Não usar como verificação jurídica nesta execução sintética.",
+    "hash": {"algorithm": "SHA-256", "value": "cf3a8bf6f6f129e56afd6466178ed9df7b8899172f53d1ccb1ef109e122560d2"}
+  }
+]

@@ -27,6 +27,20 @@
 
 O conhecimento técnico gerado deve ser convertido em material de aula sobre evidência, experimento, versão, falsificabilidade e limites.
 
+---
+
+## Adendo de implementação local — 2026-08-11
+
+**Estado original preservado:** `PENDENTE`.
+
+**Estado atual:** `CONCLUIDO_LOCALMENTE / NAO_EXECUTADO / SEM_MERGE / SEM_DEPLOY`.
+
+**Implementação:** `BJI_VALIDATION_SANDBOX_V1/`.
+
+**Evidência:** 5 testes aprovados; pré-registro exige critérios anteriores à avaliação, impede resultados/conclusões pré-preenchidos, registra hashes de entrada e produz relatório somente de metadados.
+
+**Limites:** nenhum agente/modelo foi executado e nenhuma conclusão acadêmica foi criada.
+
 ## Registro Codex — 2026-08-19
 
-Foi criada infraestrutura local que começa em `NAO_EXECUTADO`, sem resultados ou conclusão pré-preenchidos, com protocolo, corpus hash, entradas, configuração e auditoria. Nenhum experimento BJI foi executado nesta rodada.
+Foi criada infraestrutura adicional local que começa em `NAO_EXECUTADO`, sem resultados ou conclusão pré-preenchidos, com protocolo, corpus hash, entradas, configuração e auditoria. Nenhum experimento BJI foi executado nesta rodada.

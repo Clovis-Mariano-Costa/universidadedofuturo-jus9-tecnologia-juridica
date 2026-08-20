@@ -1,0 +1,13 @@
+Smoke autorizado: 1 par sintético, sem execução da POC de 60 cenários.
+
+corpus_id=B11
+corpus_version=B11.1-synthetic
+configs=B0,B1,B2,B3,B4,B5
+seed=20260810
+pair_count=1
+status_counts=PASS:0, FAIL:1, N/A:0
+data_classification=SYNTHETIC_ONLY
+input_sha256=5dfee72352ed65bc85c9aeded000668c8b66dde5e7df48d87c9cb909e627d91d
+output_sha256=c8f4dfe438f0bb5c4277c3de447218ea31de37ab5e6ac49b43be19657d0a4055
+
+O FAIL é o resultado esperado do fixture sintético B0; não é falha do executor.

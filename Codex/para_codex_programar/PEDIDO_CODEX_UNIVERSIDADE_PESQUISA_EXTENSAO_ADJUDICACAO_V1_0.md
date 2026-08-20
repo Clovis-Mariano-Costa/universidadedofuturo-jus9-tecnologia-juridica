@@ -54,3 +54,45 @@ Nenhum deploy irreversível. Usar branch/PR, testes, revisão e reversão.
 Gerar material técnico para Charlie Echo com arquitetura, riscos, limites, testes, falhas e revisão.
 
 **Data real do registro:** 2026-08-08 07:45:00.00000 America/Sao_Paulo
+
+---
+
+## Adendo de implementação local — 2026-08-11
+
+**Estado original preservado:** `PENDENTE` / especificação futura.
+
+**Estado atual:** `CONCLUIDO_LOCALMENTE / SEM_MERGE / SEM_DEPLOY`.
+
+**Sandbox:** `UNIVERSIDADE_AUTOMACAO_SANDBOX_V1/`.
+
+**Relatório:** `UNIVERSIDADE_AUTOMACAO_SANDBOX_V1/IMPLEMENTACAO_UNIVERSIDADE_AUTOMACAO_RELATORIO_V1.md`.
+
+**Testes:** 9 testes unitários/adversariais aprovados; `git diff --check` aprovado.
+
+**Limites:** dados sintéticos; sem Drive, rede, credenciais, normas reais, merge, deploy, publicação, decisão estatal ou efeito externo. O sandbox não altera cláusulas pétreas e não substitui revisão humana.
+
+## Adendo de composição dry-run — 2026-08-11
+
+**Ponte:** `UNIVERSIDADE_AUTOMACAO_SANDBOX_V1/bridge.py`.
+
+**Contrato:** composição em memória, somente leitura, entre manifesto sintético do MGP9, gate do Pacote 12 ASM/GHR/GV, decisão universitária interna e proveniência sintética.
+
+**Resultado permitido:** `READY_FOR_HUMAN_REVIEW` ou `BLOCKED`; sempre `external_effect=False`.
+
+**Testes:** 5 testes adicionais da ponte; total do sandbox universitário: 14 testes aprovados.
+
+**Limite:** sem integração, rede, gravação externa, publicação, homologação ou efeito jurídico. Próximo gate: revisão humana, pré-registro e autorização explícita.
+
+## Adendo de workflow, segurança e BJI — 2026-08-11
+
+**Implementação adicional:**
+
+- workflow sequencial de pesquisa e extensão, com transições e gates humanos;
+- contraditório, voto, fundamentação, revisão, recurso interno e rollback append-only;
+- resolução de precedência normativa G6 com bloqueio de empate;
+- scanner sintético de segredo/PII, menor privilégio, segregação de tenant, incidentes hash-only e gate `APTO_NO_ESCOPO`;
+- `BJI_VALIDATION_SANDBOX_V1/`, com pré-registro e relatório de reprodutibilidade somente de metadados.
+
+**Evidência:** sandbox universitário com 22 testes aprovados; BJI com 5 testes aprovados; estado BJI permanece `NAO_EXECUTADO`.
+
+**Limite:** sem corpus real, execução de modelo, rede, Drive, GitHub, publicação ou efeito externo. Revisão humana e autorização de integração permanecem pendentes.

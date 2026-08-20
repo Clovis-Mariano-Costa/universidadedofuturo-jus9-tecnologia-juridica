@@ -1,0 +1,42 @@
+MGP9_POC_SANDBOX_V1/
+├── __init__.py
+├── data/
+│   ├── b11_corpus.json
+│   ├── configs/b0-b5.json
+│   └── registries/
+│       ├── academic_records.json
+│       ├── academic_sources.json
+│       ├── dictionary_entries.json
+│       └── research_extension_projects.json
+├── docs/CHARLIE_ECHO_MGP9_AULA_V1.md
+├── harness.py
+├── IMPLEMENTACAO_MGP9_RELATORIO_V1.md
+├── README.md
+├── registry.py
+├── schemas/
+│   ├── README.md
+│   ├── academic-record.schema.json
+│   ├── academic-source.schema.json
+│   ├── dictionary-entry.schema.json
+│   └── research-extension.schema.json
+├── SECURITY.md
+└── tests/test_mgp9_harness.py
+
+Pacote documental adicional:
+├── README_MGP9_FECHAMENTO_DOCUMENTAL_V1.md
+├── TREE_SANDBOX.txt
+├── MANIFEST_SHA256_MGP9_V1.txt
+├── TESTES_4_SAIDA_INTEGRAL.txt
+├── SMOKE_EVIDENCE.txt
+├── B0_B5_DESCRICAO.md
+├── LOADER_CORPUS_EVIDENCE.md
+├── EXPORT_BRUTO_EXAMPLE.jsonl
+├── ROLLBACK_PROCEDURE.md
+└── smoke/
+    ├── events.jsonl
+    ├── input.sha256
+    ├── manifest.json
+    ├── output.sha256
+    ├── results.csv
+    ├── results.jsonl
+    └── ROLLBACK.md

@@ -1,0 +1,16 @@
+[
+  {
+    "record_id": "SYN-ACAD-001",
+    "faculty": "Faculdade Sintética de Tecnologia Jurídica",
+    "program": "Programa Experimental de IA e Registros",
+    "curriculum_version": "CURR-SYN-1.0",
+    "component": "MGP-9 laboratório controlado",
+    "workload": {"total_hours": 20, "unit": "hour", "mode": "synthetic"},
+    "extension_hours": 4,
+    "extracurricular_hours": 6,
+    "evidence_ref": ["synthetic://evidence/MGP9-001"],
+    "completion_state": "EM_REVISAO",
+    "hash": {"algorithm": "SHA-256", "value": "9bb4149638e03c5536ce5bec7aca984527da2696476678d221b25b67621a2601"},
+    "supersedes": null
+  }
+]

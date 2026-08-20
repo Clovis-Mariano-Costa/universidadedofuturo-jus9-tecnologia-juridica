@@ -1,0 +1,14 @@
+Comando seguro de fechamento (sem executar o teste de 60 pares):
+python -c "import unittest; from MGP9_POC_SANDBOX_V1.tests.test_mgp9_harness import Mgp9HarnessTests; Mgp9HarnessTests.test_legacy_limit_of_60_is_available=unittest.skip('SKIPPED_BY_CLOSING_REQUEST: no 60-scenario run')(Mgp9HarnessTests.test_legacy_limit_of_60_is_available); suite=unittest.defaultTestLoader.loadTestsFromTestCase(Mgp9HarnessTests); result=unittest.TextTestRunner(verbosity=2).run(suite); raise SystemExit(0 if result.wasSuccessful() else 1)"
+
+test_default_pairing_is_72_and_preserves_statuses (MGP9_POC_SANDBOX_V1.tests.test_mgp9_harness.Mgp9HarnessTests.test_default_pairing_is_72_and_preserves_statuses) ... ok
+test_legacy_limit_of_60_is_available (MGP9_POC_SANDBOX_V1.tests.test_mgp9_harness.Mgp9HarnessTests.test_legacy_limit_of_60_is_available) ... skipped 'SKIPPED_BY_CLOSING_REQUEST: no 60-scenario run'
+test_registry_fixtures (MGP9_POC_SANDBOX_V1.tests.test_mgp9_harness.Mgp9HarnessTests.test_registry_fixtures) ... ok
+test_smoke_and_hashes (MGP9_POC_SANDBOX_V1.tests.test_mgp9_harness.Mgp9HarnessTests.test_smoke_and_hashes) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.545s
+
+OK (skipped=1)
+
+Observação: o teste de pairing 72 é sintético e executado em diretório temporário pelo teste unitário; a POC confirmatória de 60 pares não foi executada.
