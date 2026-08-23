@@ -1,0 +1,14 @@
+{
+  "drive_roots": [
+    "drive-root-legislador-fixture"
+  ],
+  "drive_root": "drive-root-legislador-fixture",
+  "github_repository": "Clovis-Mariano-Costa/familia-virtual-jus9-tecnologia-juridica",
+  "github_branch": "main",
+  "source_limits": [
+    "fixture_only",
+    "no_live_api",
+    "no_source_content_in_reports",
+    "no_source_writes"
+  ]
+}

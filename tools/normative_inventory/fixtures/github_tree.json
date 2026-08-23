@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "id": "github-ato-001",
+      "name": "ATO_Organizacao_Mundo_Jus9_V1.md",
+      "path": "ATOS/ATO_Organizacao_Mundo_Jus9_V1.md",
+      "mime_type": "text/markdown",
+      "size": 196,
+      "modified_time": "2026-08-23T23:00:00Z",
+      "source_root": "Clovis-Mariano-Costa/familia-virtual-jus9-tecnologia-juridica@main",
+      "content": "Código: ATO-ORG-MJ9-2026-08-23-V1.0\nEstado: AUTORIZADO PELO FUNDADOR / VIGENTE INTERNAMENTE\n",
+      "metadata": {
+        "code": "ATO-ORG-MJ9-2026-08-23-V1.0",
+        "version": "V1.0",
+        "state": "VIGENTE",
+        "authority": "Fundador",
+        "date": "2026-08-23",
+        "scope": "organização interna"
+      }
+    },
+    {
+      "id": "github-juramento-001",
+      "name": "juramento-raiz-copia.md",
+      "path": "CODEX/historico/juramento-raiz-copia.md",
+      "mime_type": "text/markdown",
+      "size": 84,
+      "modified_time": "2026-08-21T10:00:00Z",
+      "source_root": "Clovis-Mariano-Costa/familia-virtual-jus9-tecnologia-juridica@main",
+      "content": "Juramento-Raiz — cópia histórica para continuidade técnica.\n",
+      "metadata": {
+        "version": "V1.0",
+        "state": "HISTÓRICO"
+      }
+    },
+    {
+      "id": "github-proposta-001",
+      "name": "Proposta Emenda Constitucional Interna.md",
+      "path": "ATOS/Proposta Emenda Constitucional Interna.md",
+      "mime_type": "text/markdown",
+      "size": 2048,
+      "modified_time": "2026-08-19T10:00:00Z",
+      "source_root": "Clovis-Mariano-Costa/familia-virtual-jus9-tecnologia-juridica@main",
+      "metadata": {
+        "code": "PROPOSTA-ECI-001",
+        "version": "V0.1"
+      }
+    }
+  ]
+}
