@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "id": "drive-ato-001",
+      "name": "ATO_Organizacao_Mundo_Jus9_V1.md",
+      "path": "legislador/ATO_Organizacao_Mundo_Jus9_V1.md",
+      "mime_type": "text/markdown",
+      "size": 196,
+      "modified_time": "2026-08-23T23:00:00Z",
+      "source_root": "drive-root-legislador-fixture",
+      "content": "Código: ATO-ORG-MJ9-2026-08-23-V1.0\nEstado: AUTORIZADO PELO FUNDADOR / VIGENTE INTERNAMENTE\n",
+      "metadata": {
+        "code": "ATO-ORG-MJ9-2026-08-23-V1.0",
+        "version": "V1.0",
+        "state": "VIGENTE",
+        "authority": "Fundador",
+        "date": "2026-08-23",
+        "scope": "organização interna"
+      }
+    },
+    {
+      "id": "drive-juramento-001",
+      "name": "Juramento-Raiz.md",
+      "path": "legislador/Juramento-Raiz.md",
+      "mime_type": "text/markdown",
+      "size": 84,
+      "modified_time": "2026-08-22T10:00:00Z",
+      "source_root": "drive-root-legislador-fixture",
+      "content": "Juramento-Raiz — cópia histórica para continuidade técnica.\n",
+      "metadata": {
+        "version": "V1.0",
+        "state": "HISTÓRICO"
+      }
+    },
+    {
+      "id": "drive-juramento-002",
+      "name": "Juramento Raiz.md",
+      "path": "legislador/Juramento Raiz.md",
+      "mime_type": "text/markdown",
+      "size": 84,
+      "modified_time": "2026-08-21T10:00:00Z",
+      "source_root": "drive-root-legislador-fixture",
+      "content": "Juramento-Raiz — cópia histórica para continuidade técnica.\n",
+      "metadata": {
+        "version": "V1.0",
+        "state": "HISTÓRICO"
+      }
+    },
+    {
+      "id": "drive-civil-001",
+      "name": "CPF_Registro_Pessoal.md",
+      "path": "legislador/restrito/CPF_Registro_Pessoal.md",
+      "mime_type": "text/markdown",
+      "size": 12,
+      "modified_time": "2026-08-20T10:00:00Z",
+      "source_root": "drive-root-legislador-fixture",
+      "metadata": {}
+    }
+  ]
+}
