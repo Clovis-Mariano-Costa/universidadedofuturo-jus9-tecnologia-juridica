@@ -22,6 +22,37 @@ export const ACADEMIC_STATES = Object.freeze([
   'PUBLICADO'
 ]);
 
+export const MAO_NA_MASSA_STATES = Object.freeze([
+  'PREPARAR',
+  'EMBRULHAR',
+  'VALIDAR',
+  'APROVAR',
+  'EXECUTAR',
+  'AUDITAR',
+  'ROLLBACK',
+  'BLOQUEAR'
+]);
+
+export const DICTIONARY_STATES = Object.freeze([
+  'SEMENTE_NAO_CANONICA',
+  'PROVISORIO',
+  'CONSULTADO',
+  'REVISADO',
+  'CANONICO',
+  'SUPERADO_COM_GENEALOGIA'
+]);
+
+const maoNaMassaTransitions = Object.freeze({
+  PREPARAR: ['EMBRULHAR', 'BLOQUEAR'],
+  EMBRULHAR: ['VALIDAR', 'BLOQUEAR'],
+  VALIDAR: ['APROVAR', 'BLOQUEAR'],
+  APROVAR: ['EXECUTAR', 'BLOQUEAR'],
+  EXECUTAR: ['AUDITAR', 'ROLLBACK', 'BLOQUEAR'],
+  AUDITAR: ['ROLLBACK', 'BLOQUEAR'],
+  ROLLBACK: ['PREPARAR'],
+  BLOQUEAR: ['PREPARAR']
+});
+
 export function canonicalText(value) {
   return String(value ?? '').replace(/\r\n?/g, '\n');
 }
@@ -48,6 +79,92 @@ export function sha256(value) {
 
 export function hashDeterministic(value) {
   return sha256(serializeDeterministic(value));
+}
+
+export function validateMaoNaMassaTransition(current, next, evidence = {}) {
+  if (!MAO_NA_MASSA_STATES.includes(current) || !MAO_NA_MASSA_STATES.includes(next)) {
+    throw new Error('unknown Mão na Massa state');
+  }
+  if (!maoNaMassaTransitions[current]?.includes(next)) {
+    throw new Error(`invalid Mão na Massa transition: ${current} -> ${next}`);
+  }
+  if (!evidence.actor || !evidence.evidence_ref || !evidence.rollback_ref) {
+    throw new Error('Mão na Massa transition requires actor, evidence_ref and rollback_ref');
+  }
+  if ((next === 'APROVAR' || next === 'EXECUTAR') && evidence.human_gate !== true) {
+    throw new Error('approval and execution require human_gate=true');
+  }
+  return {
+    from: current,
+    to: next,
+    actor: evidence.actor,
+    evidence_ref: evidence.evidence_ref,
+    rollback_ref: evidence.rollback_ref,
+    human_gate: evidence.human_gate === true
+  };
+}
+
+export function createProvenanceRecord(input = {}) {
+  const required = ['entity_id', 'activity', 'agent', 'source_ref', 'version', 'content_hash', 'route', 'rollback_ref'];
+  const missing = required.filter((field) => input[field] === undefined || input[field] === null || input[field] === '');
+  if (missing.length > 0) throw new Error(`provenance requires: ${missing.join(', ')}`);
+  return {
+    entity_id: input.entity_id,
+    activity: input.activity,
+    agent: input.agent,
+    source_ref: input.source_ref,
+    version: input.version,
+    content_hash: input.content_hash,
+    route: input.route,
+    rollback_ref: input.rollback_ref,
+    classification: input.classification ?? 'INTERNAL_SYNTHETIC',
+    created_at: input.created_at ?? new Date().toISOString()
+  };
+}
+
+export function assertFinalApprovalGate(gate = {}) {
+  const errors = [];
+  if (gate.human_approval !== true) errors.push('human_approval');
+  if (!gate.document_sha256) errors.push('document_sha256');
+  if (!Array.isArray(gate.board_reviewer_ids) || gate.board_reviewer_ids.length < 2) {
+    errors.push('plural_board_review');
+  }
+  if (gate.empirical_required === true && gate.empirical_evidence_complete !== true) {
+    errors.push('empirical_evidence');
+  }
+  const hashes = Array.isArray(gate.reviewer_document_sha256)
+    ? gate.reviewer_document_sha256.filter(Boolean)
+    : [];
+  if (hashes.length !== gate.board_reviewer_ids?.length || hashes.some((hash) => hash !== gate.document_sha256)) {
+    errors.push('common_document_hash');
+  }
+  if (errors.length > 0) {
+    throw new Error(`APROVACAO_FINAL_PENDENTE: ${errors.join(', ')}`);
+  }
+  return true;
+}
+
+const forbiddenCtpsvField = /(^|_)(address|home|domestic|family|password|secret|token|private|religion|health|cpf|rg)(_|$)/i;
+
+export function createCtpsvMergeProposal(input = {}) {
+  const fields = input.fields ?? {};
+  const forbidden = Object.keys(fields).filter((field) => forbiddenCtpsvField.test(field));
+  if (forbidden.length > 0) throw new Error(`CTPSV rejects domestic or sensitive fields: ${forbidden.join(', ')}`);
+  const required = ['proposal_id', 'holder_id', 'source_ref', 'source_version', 'source_hash', 'rollback_ref'];
+  const missing = required.filter((field) => input[field] === undefined || input[field] === null || input[field] === '');
+  if (missing.length > 0) throw new Error(`CTPSV proposal requires: ${missing.join(', ')}`);
+  return {
+    proposal_id: input.proposal_id,
+    holder_id: input.holder_id,
+    fields: { ...fields },
+    source_ref: input.source_ref,
+    source_version: input.source_version,
+    source_hash: input.source_hash,
+    rollback_ref: input.rollback_ref,
+    conflicts: input.conflicts ?? [],
+    status: 'PENDENTE_REVISAO_TITULAR',
+    human_approval: false
+  };
 }
 
 export function validateExecutionMetadata(metadata) {

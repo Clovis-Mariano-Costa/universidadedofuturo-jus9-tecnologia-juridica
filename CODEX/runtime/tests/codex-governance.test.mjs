@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   assertB12Eligible,
+  assertFinalApprovalGate,
   assertExternalEffectAllowed,
   assertProtectedMutationAllowed,
   assertVisualPurposeAllowed,
@@ -9,6 +10,8 @@ import {
   canonicalText,
   createAdjudicationRecord,
   createAcademicProject,
+  createCtpsvMergeProposal,
+  createProvenanceRecord,
   createRollbackManifest,
   createLearningRecord,
   createResearchRun,
@@ -19,6 +22,7 @@ import {
   scanSecretMarkers,
   serializeDeterministic,
   transitionAcademicProject,
+  validateMaoNaMassaTransition,
   validateAdjudicationCase,
   validateExecutionMetadata
 } from '../codex-governance.mjs';
@@ -98,4 +102,55 @@ test('detects secret markers without exposing values', () => {
   assert.equal(scanSecretMarkers('normal public text').clean, true);
   assert.equal(scanSecretMarkers('api_key=REDACTED').clean, false);
   assert.equal(scanSecretMarkers('api_key=REDACTED').markers.length, 1);
+});
+
+test('enforces Mão na Massa transitions and human gate', () => {
+  assert.throws(() => validateMaoNaMassaTransition('VALIDAR', 'APROVAR', { actor: 'codex', evidence_ref: 'e1', rollback_ref: 'rb1' }));
+  assert.deepEqual(validateMaoNaMassaTransition('VALIDAR', 'APROVAR', {
+    actor: 'human-review', evidence_ref: 'e1', rollback_ref: 'rb1', human_gate: true
+  }), {
+    from: 'VALIDAR', to: 'APROVAR', actor: 'human-review', evidence_ref: 'e1', rollback_ref: 'rb1', human_gate: true
+  });
+  assert.throws(() => validateMaoNaMassaTransition('AUDITAR', 'EXECUTAR', {
+    actor: 'codex', evidence_ref: 'e1', rollback_ref: 'rb1', human_gate: true
+  }));
+});
+
+test('requires complete provenance before a backend record exists', () => {
+  assert.throws(() => createProvenanceRecord({ entity_id: 'x', activity: 'read' }));
+  const record = createProvenanceRecord({
+    entity_id: 'x', activity: 'read', agent: 'codex', source_ref: 'drive:1', version: 'v1',
+    content_hash: 'sha256:x', route: 'source->audit', rollback_ref: 'rb:x'
+  });
+  assert.equal(record.classification, 'INTERNAL_SYNTHETIC');
+});
+
+test('blocks final academic approval until every gate and common hash exist', () => {
+  const base = {
+    human_approval: true,
+    document_sha256: 'sha256:doc',
+    board_reviewer_ids: ['r1', 'r2'],
+    reviewer_document_sha256: ['sha256:doc', 'sha256:other'],
+    empirical_required: true,
+    empirical_evidence_complete: false
+  };
+  assert.throws(() => assertFinalApprovalGate(base));
+  assert.doesNotThrow(() => assertFinalApprovalGate({
+    ...base,
+    reviewer_document_sha256: ['sha256:doc', 'sha256:doc'],
+    empirical_evidence_complete: true
+  }));
+});
+
+test('keeps CTPSV proposals professional-only and reviewable', () => {
+  assert.throws(() => createCtpsvMergeProposal({
+    proposal_id: 'p1', holder_id: 'h1', source_ref: 'src', source_version: 'v1',
+    source_hash: 'sha256:x', rollback_ref: 'rb1', fields: { home_address: 'redacted' }
+  }));
+  const proposal = createCtpsvMergeProposal({
+    proposal_id: 'p2', holder_id: 'h1', source_ref: 'src', source_version: 'v1',
+    source_hash: 'sha256:x', rollback_ref: 'rb2', fields: { role: 'researcher', scope: 'sandbox' }
+  });
+  assert.equal(proposal.status, 'PENDENTE_REVISAO_TITULAR');
+  assert.equal(proposal.human_approval, false);
 });
