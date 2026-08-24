@@ -15,6 +15,10 @@ import {
   createRollbackManifest,
   createLearningRecord,
   createResearchRun,
+  createAcademicDocument,
+  transitionAcademicDocument,
+  validateAcademicDeposit,
+  buildAcademicDepositManifest,
   hashDeterministic,
   lintNormRecord,
   recordLearningAttempt,
@@ -102,6 +106,54 @@ test('detects secret markers without exposing values', () => {
   assert.equal(scanSecretMarkers('normal public text').clean, true);
   assert.equal(scanSecretMarkers('api_key=REDACTED').clean, false);
   assert.equal(scanSecretMarkers('api_key=REDACTED').markers.length, 1);
+});
+
+function academicFixture(overrides = {}) {
+  return createAcademicDocument({
+    document_id: 'DOC-SYN-01',
+    version: '1.0',
+    markdown_hash: 'sha256:md',
+    pdf_hash: 'sha256:pdf',
+    pdf_version: '1.0',
+    logo: { asset_id: 'logo-synthetic', version: '1', sha256: 'sha256:logo', aspect_ratio: 1, expected_aspect_ratio: 1, undistorted: true },
+    metadata: { origin: 'synthetic-origin', destination: 'synthetic-library', author: 'synthetic-author', advisor: 'synthetic-advisor', human_assistant: 'synthetic-assistant', reviewers: ['synthetic-reviewer'] },
+    ai_identity: { product: 'synthetic-product', organization: 'synthetic-organization' },
+    opinions: [{ opinion_id: 'OP-01', hash: 'sha256:opinion' }],
+    rollback_ref: 'DOC-SYN-01:1.0',
+    ...overrides
+  });
+}
+
+test('blocks academic deposit before homologation and on divergent hashes', () => {
+  const draft = academicFixture();
+  assert.equal(validateAcademicDeposit(draft).valid, false);
+  assert.throws(() => buildAcademicDepositManifest(draft));
+  assert.equal(validateAcademicDeposit(academicFixture({ state: 'HOMOLOGADO', pdf_version: '2.0' })).valid, false);
+});
+
+test('requires registered internal identity or product and organization', () => {
+  assert.equal(validateAcademicDeposit(academicFixture({ ai_identity: { internal_name: 'unregistered' }, state: 'HOMOLOGADO' })).valid, false);
+  assert.equal(validateAcademicDeposit(academicFixture({ ai_identity: { internal_name: 'registered', registered: true }, state: 'HOMOLOGADO' })).valid, true);
+});
+
+test('advances a homologated document only with hashes, opinions and human gates', () => {
+  let document = academicFixture();
+  document = transitionAcademicDocument(document, 'EM_REVISAO', { actor: 'codex', evidence_ref: 'e-review' });
+  document = transitionAcademicDocument(document, 'SUBMETIDO_A_BANCA', { actor: 'human', evidence_ref: 'e-board' });
+  document = transitionAcademicDocument(document, 'APROVADO', { actor: 'board', evidence_ref: 'e-approved', human_gate: true });
+  document = transitionAcademicDocument(document, 'HOMOLOGADO', { actor: 'secretary', evidence_ref: 'e-homologated', human_gate: true });
+  const manifest = buildAcademicDepositManifest(document);
+  assert.equal(document.state, 'HOMOLOGADO');
+  assert.equal(manifest.markdown_hash, 'sha256:md');
+  assert.ok(manifest.integrity_sha256);
+  document = transitionAcademicDocument(document, 'PUBLICADO_BIBLIOTECA', { actor: 'library', evidence_ref: 'e-publish', human_gate: true });
+  assert.equal(document.state, 'PUBLICADO_BIBLIOTECA');
+});
+
+test('rejects distorted logo and publication without human gate', () => {
+  assert.equal(validateAcademicDeposit(academicFixture({ state: 'HOMOLOGADO', logo: { asset_id: 'logo', version: '1', sha256: 'h', aspect_ratio: 2, expected_aspect_ratio: 1, undistorted: true } })).valid, false);
+  const document = academicFixture({ state: 'HOMOLOGADO' });
+  assert.throws(() => transitionAcademicDocument(document, 'PUBLICADO_BIBLIOTECA', { actor: 'library', evidence_ref: 'e-publish' }));
 });
 
 test('enforces Mão na Massa transitions and human gate', () => {
