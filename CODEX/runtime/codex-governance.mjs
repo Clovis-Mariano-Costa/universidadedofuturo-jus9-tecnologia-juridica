@@ -379,6 +379,137 @@ export function transitionAcademicProject(project, nextState, evidence = {}) {
   };
 }
 
+export const ACADEMIC_DOCUMENT_STATES = Object.freeze([
+  'RASCUNHO',
+  'EM_REVISAO',
+  'SUBMETIDO_A_BANCA',
+  'CORRECOES',
+  'APROVADO',
+  'HOMOLOGADO',
+  'PUBLICADO_BIBLIOTECA'
+]);
+
+const academicDocumentTransitions = Object.freeze({
+  RASCUNHO: ['EM_REVISAO'],
+  EM_REVISAO: ['SUBMETIDO_A_BANCA'],
+  SUBMETIDO_A_BANCA: ['CORRECOES', 'APROVADO'],
+  CORRECOES: ['SUBMETIDO_A_BANCA'],
+  APROVADO: ['HOMOLOGADO'],
+  HOMOLOGADO: ['PUBLICADO_BIBLIOTECA'],
+  PUBLICADO_BIBLIOTECA: []
+});
+
+export function createAcademicDocument(input = {}) {
+  return {
+    document_id: input.document_id ?? null,
+    version: input.version ?? null,
+    state: input.state ?? 'RASCUNHO',
+    canonical_source: 'MARKDOWN',
+    markdown_hash: input.markdown_hash ?? null,
+    pdf_hash: input.pdf_hash ?? null,
+    pdf_version: input.pdf_version ?? null,
+    logo: input.logo ?? null,
+    metadata: input.metadata ?? {},
+    ai_identity: input.ai_identity ?? null,
+    opinions: input.opinions ?? [],
+    history: input.history ?? [],
+    rollback_ref: input.rollback_ref ?? null,
+    created_at: input.created_at ?? new Date().toISOString()
+  };
+}
+
+function academicDocumentMetadataErrors(document = {}) {
+  const errors = [];
+  const required = ['document_id', 'version', 'markdown_hash', 'rollback_ref'];
+  for (const field of required) {
+    if (document[field] === undefined || document[field] === null || document[field] === '') errors.push(`${field}_REQUIRED`);
+  }
+  const metadata = document.metadata ?? {};
+  for (const field of ['origin', 'destination', 'author', 'advisor', 'human_assistant', 'reviewers']) {
+    if (metadata[field] === undefined || metadata[field] === null || metadata[field] === '') errors.push(`metadata.${field}_REQUIRED`);
+  }
+  if (!Array.isArray(metadata.reviewers) || metadata.reviewers.length === 0) errors.push('metadata.reviewers_REQUIRED');
+  const identity = document.ai_identity ?? {};
+  if (identity.internal_name && identity.registered !== true) errors.push('UNREGISTERED_INTERNAL_AI_NAME');
+  if (!identity.internal_name && (!identity.product || !identity.organization)) errors.push('PRODUCT_AND_ORGANIZATION_REQUIRED_WHEN_INTERNAL_NAME_ABSENT');
+  const logo = document.logo ?? {};
+  if (logo.asset_id || logo.version || logo.sha256 || logo.aspect_ratio || logo.expected_aspect_ratio || logo.undistorted !== undefined) {
+    for (const field of ['asset_id', 'version', 'sha256', 'aspect_ratio', 'expected_aspect_ratio']) {
+      if (logo[field] === undefined || logo[field] === null || logo[field] === '') errors.push(`logo.${field}_REQUIRED`);
+    }
+    if (logo.undistorted !== true) errors.push('logo.undistorted_REQUIRED');
+    if (Number(logo.aspect_ratio) !== Number(logo.expected_aspect_ratio)) errors.push('logo.ASPECT_RATIO_MISMATCH');
+  }
+  return errors;
+}
+
+export function validateAcademicDeposit(document = {}) {
+  const errors = academicDocumentMetadataErrors(document);
+  if (document.state !== 'HOMOLOGADO' && document.state !== 'PUBLICADO_BIBLIOTECA') errors.push('HOMOLOGATION_REQUIRED');
+  if (!document.pdf_hash) errors.push('pdf_hash_REQUIRED');
+  if (document.pdf_version !== document.version) errors.push('PDF_MARKDOWN_VERSION_MISMATCH');
+  if (!document.logo) errors.push('logo_REQUIRED');
+  if (!Array.isArray(document.opinions) || document.opinions.length === 0) errors.push('opinions_REQUIRED');
+  for (const opinion of document.opinions ?? []) {
+    if (!opinion.opinion_id || !opinion.hash) errors.push('opinion.hash_and_id_REQUIRED');
+  }
+  return { valid: errors.length === 0, errors };
+}
+
+export function buildAcademicDepositManifest(document = {}) {
+  const validation = validateAcademicDeposit(document);
+  if (!validation.valid) throw new Error(`academic deposit blocked: ${validation.errors.join(',')}`);
+  const manifest = {
+    manifest_version: '1',
+    document_id: document.document_id,
+    version: document.version,
+    state: document.state,
+    canonical_source: document.canonical_source,
+    markdown_hash: document.markdown_hash,
+    pdf_hash: document.pdf_hash,
+    pdf_version: document.pdf_version,
+    logo: document.logo,
+    metadata: document.metadata,
+    ai_identity: document.ai_identity,
+    opinions: document.opinions,
+    rollback_ref: document.rollback_ref
+  };
+  return { ...manifest, integrity_sha256: hashDeterministic(manifest) };
+}
+
+export function transitionAcademicDocument(document, nextState, evidence = {}) {
+  const current = document?.state;
+  if (!ACADEMIC_DOCUMENT_STATES.includes(nextState) || !academicDocumentTransitions[current]?.includes(nextState)) {
+    throw new Error(`invalid academic document transition: ${current} -> ${nextState}`);
+  }
+  if (!evidence.actor || !evidence.evidence_ref) throw new Error('academic document transition requires actor and evidence_ref');
+  if (nextState === 'APROVADO' && (evidence.human_gate !== true || !document.opinions?.length)) {
+    throw new Error('approval requires opinions and human_gate=true');
+  }
+  const candidate = {
+    ...document,
+    state: nextState,
+    history: [...(document.history ?? []), {
+      from: current,
+      to: nextState,
+      actor: evidence.actor,
+      evidence_ref: evidence.evidence_ref,
+      at: evidence.at ?? new Date().toISOString()
+    }]
+  };
+  if (nextState === 'HOMOLOGADO') {
+    if (evidence.human_gate !== true) throw new Error('homologation requires human_gate=true');
+    const validation = validateAcademicDeposit(candidate);
+    if (!validation.valid) throw new Error(`homologation blocked: ${validation.errors.join(',')}`);
+  }
+  if (nextState === 'PUBLICADO_BIBLIOTECA') {
+    const validation = validateAcademicDeposit(candidate);
+    if (!validation.valid) throw new Error(`publication blocked: ${validation.errors.join(',')}`);
+    if (evidence.human_gate !== true) throw new Error('publication requires human_gate=true');
+  }
+  return candidate;
+}
+
 export function validateAdjudicationCase(record = {}) {
   const required = ['case_id', 'judge_ai', 'model_version', 'jurisdiction_label', 'evidence_hash', 'conflict_check', 'human_gate', 'rollback_ref'];
   const missing = required.filter((field) => record[field] === undefined || record[field] === null || record[field] === '');
