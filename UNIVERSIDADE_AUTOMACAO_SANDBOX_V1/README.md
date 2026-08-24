@@ -17,6 +17,8 @@ Sandbox offline e segregado para o pedido `PEDIDO_CODEX_UNIVERSIDADE_PESQUISA_EX
 - regra de precedência normativa G6 com bloqueio de empate;
 - scanner sintético de segredo/PII, segregação de tenant, menor privilégio e gate `APTO_NO_ESCOPO`;
 - testes adversariais e dados sintéticos.
+- contrato offline de Casas-Lar/Casas-Trabalho/CITAT: inventário somente-leitura, mapa de referências, sincronização restrita, divergência em quarentena, especialização com evidência/revisor/validade e auditoria mensal determinística;
+- separação explícita de marco simbólico (`1973-06-16`) e datas reais de criação, assinatura e atualização.
 
 ## Execução
 
@@ -29,6 +31,10 @@ python -m unittest discover -s UNIVERSIDADE_AUTOMACAO_SANDBOX_V1/tests -v
 ## Limites
 
 O sandbox não acessa Drive, GitHub, normas reais, credenciais, dados pessoais, Poder Judiciário, MEC ou qualquer serviço externo. Não cria jurisdição, sanção, título, homologação, publicação ou efeito jurídico. A presença de uma decisão interna não equivale a decisão estatal.
+
+## Casas e CITAT
+
+`houses.py` aceita somente metadados fornecidos pelo chamador. O inventário não baixa nem copia conteúdo da Casa-Lar. A sincronização só pode propor campos CITAT autorizados e com origem, versão e hash; divergências produzem `QUARANTINED_CONFLICT` com `NO_MOVE_NO_DELETE`. A auditoria é `READ_ONLY` e toda alteração externa permanece fora deste sandbox.
 
 ## Ponte dry-run
 
