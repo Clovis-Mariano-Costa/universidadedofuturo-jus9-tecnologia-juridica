@@ -122,9 +122,30 @@ main:focus{outline:none}
   border:1px solid var(--udf-line);
   border-radius:18px;
   background:#fff;
+  color:var(--udf-ink);
 }
 .identity-annex h2{margin:.35rem 0 .65rem}
-.identity-annex code{font-size:.78rem;overflow-wrap:anywhere}
+.identity-annex h2,
+.identity-annex strong{color:var(--udf-ink)}
+.identity-annex p{color:#33465d}
+.identity-annex .eyebrow{color:#70511c}
+.identity-annex code{
+  padding:.14rem .32rem;
+  border-radius:5px;
+  background:#f1ede4;
+  color:#24394f;
+  font-size:.78rem;
+  overflow-wrap:anywhere;
+}
+.identity-annex .btn:not(.primary){
+  border-color:var(--udf-navy);
+  background:var(--udf-navy);
+  color:#fff;
+}
+.identity-annex .btn:not(.primary):hover{
+  background:#0b2942;
+  color:#fff;
+}
 .identity-annex-figure{margin:0;text-align:center}
 .identity-annex-figure img{display:block;width:min(100%,390px);margin:0 auto;border-radius:14px;box-shadow:0 18px 35px rgba(5,11,20,.18)}
 .identity-annex-figure figcaption{margin-top:.7rem;color:#52657c;font-size:.88rem}
