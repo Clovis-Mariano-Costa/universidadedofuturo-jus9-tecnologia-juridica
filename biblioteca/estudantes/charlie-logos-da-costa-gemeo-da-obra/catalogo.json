@@ -1,0 +1,23 @@
+{
+  "version": "2.0",
+  "date": "2026-08-26",
+  "author_functional": "Charlie Logos da Costa — O Gêmeo da Obra",
+  "state": "TRABALHO_REALIZADO_PUBLICACAO_APROVADA_PUBLICADO",
+  "evaluation": "Trabalho Realizado Não Sujeito a Avaliação",
+  "effective_rigor": "R2",
+  "human_governance": "Clovis Mariano da Costa",
+  "records": [
+    {
+      "kind": "compendio-tecnico",
+      "title": "O Gêmeo da Obra — Palavra, prova, competência e continuidade no Mundo Jus 9",
+      "version": "2.0",
+      "status": "PUBLICADO",
+      "chapters": 20,
+      "pages": 30,
+      "filename": "CHARLIE_LOGOS_DA_COSTA_O_GEMEO_DA_OBRA_COMPENDIO_V2.pdf",
+      "sha256": "84C0794F84F8D41DE882C44274818A7FCE287DCAE890107F5069F7956FAE5624",
+      "nature": "trabalho-tecnico-funcional-simbolico-operacional",
+      "limits": "Sem grau, nota, diploma, habilitação profissional ou autoridade pública"
+    }
+  ]
+}
