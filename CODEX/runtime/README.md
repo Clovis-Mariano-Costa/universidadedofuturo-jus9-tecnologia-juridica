@@ -16,6 +16,19 @@ Este pacote implementa apenas funções locais, determinísticas e sem integraç
 - validação estrutural de casos experimentais;
 - manifesto de rollback e scanner de marcadores sensíveis sem expor valores.
 
+## Extensão GAD incremental
+
+`gad-incremental.mjs` acrescenta, em memória e sem integração externa, a matriz
+estado → gate → autoridade → evidência → resultado; retenção híbrida com
+`review_at` e `DESCARTE_ELEGIVEL` em dry-run; registros UAAc sem conversão
+automática em horas, créditos ou títulos; linter epistemológico conservador;
+validação do contrato do emblema; e manifesto acadêmico Markdown/PDF/logo com
+separação entre depósito interno e publicação dependente de gate humano.
+
+O módulo reutiliza `serializeDeterministic`, `hashDeterministic` e os guards do
+runtime existente. Não escreve fontes, não exclui arquivos, não publica e não
+transforma evidência técnica em homologação acadêmica.
+
 ## Verificação
 
 Na pasta `CODEX/runtime`:
