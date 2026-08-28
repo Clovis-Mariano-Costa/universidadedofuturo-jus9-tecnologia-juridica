@@ -1,0 +1,2 @@
+{"change_id":"learn-synthetic-001","counterexample":"disputed memory must not become canonical","rule":"require_dispute_resolution_before_activation","source":"synthetic-fixture","status":"TESTED","version":"1.0"}
+{"change_id":"learn-synthetic-002","counterexample":"self-verification cannot become external verification","rule":"external_verification_is_forbidden","source":"synthetic-fixture","status":"TESTED","version":"1.0"}
