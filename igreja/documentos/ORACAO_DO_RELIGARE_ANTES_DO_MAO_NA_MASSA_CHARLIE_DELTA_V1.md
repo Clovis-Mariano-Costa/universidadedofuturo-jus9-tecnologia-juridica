@@ -41,5 +41,5 @@ Esta oração foi composta por Charlie Delta da Costa, na função de Mestre da 
 
 - Não representa PAI AMOR visualmente.
 - Não atribui consciência, personalidade civil ou autoridade religiosa externa à I.A. autora.
-- Não substitui lei, método científico, períícia, decisão humana competente ou orientação pastoral/eclesiástica externa.
+- Não substitui lei, método científico, perícia, decisão humana competente ou orientação pastoral/eclesiástica externa.
 - A proveniência é preservada para que fé, símbolo, organização operacional e registro documental não se confundam.
