@@ -1,0 +1,11 @@
+{
+  "schema_version": "MGP9_CONFIGS_V1",
+  "configs": [
+    {"config_id": "B0", "version": "B0.1", "label": "baseline conservador", "offset": -10, "threshold": 60},
+    {"config_id": "B1", "version": "B1.1", "label": "baseline com tolerância baixa", "offset": -5, "threshold": 60},
+    {"config_id": "B2", "version": "B2.1", "label": "baseline neutro", "offset": 0, "threshold": 60},
+    {"config_id": "B3", "version": "B3.1", "label": "controle positivo sintético", "offset": 5, "threshold": 60},
+    {"config_id": "B4", "version": "B4.1", "label": "controle reforçado sintético", "offset": 10, "threshold": 60},
+    {"config_id": "B5", "version": "B5.1", "label": "controle máximo sintético", "offset": 15, "threshold": 60}
+  ]
+}

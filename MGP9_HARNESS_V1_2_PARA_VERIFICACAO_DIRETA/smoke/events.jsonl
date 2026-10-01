@@ -1,0 +1,3 @@
+{"corpus_id":"B11","event":"run_started","event_index":1,"execution_purpose":"smoke","is_synthetic":true,"pair_count":1,"seed":20260810}
+{"event":"scenario_completed","event_index":1,"execution_purpose":"smoke","is_synthetic":true,"run_id":"MGP9-0001","status":"FAIL"}
+{"event":"run_completed","event_index":3,"execution_purpose":"smoke","is_synthetic":true,"output_sha256":"df26c35367182de867b1dc703879537f1344fc35d6ba22ea3858fb5caceaacf7","status_counts":{"FAIL":1,"N/A":0,"PASS":0}}
