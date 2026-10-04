@@ -1,0 +1,7 @@
+# 90_HISTORICO
+
+Itens superados, encerrados ou históricos, preservados sem confundir com o estado atual.
+
+STATUS_PADRAO = ATIVO
+DOCUMENTAL_VALUE = WORKING_ONLY | CANDIDATE_FOR_ARCHIVE | MUST_ARCHIVE
+DRIVE_STATUS = NOT_REQUIRED | PENDING_RELATOR | ARCHIVED_IN_DRIVE
