@@ -1,0 +1,7 @@
+# 03_RESPOSTAS
+
+Respostas de trabalho e devolutivas que ainda não ganharam valor documental oficial.
+
+STATUS_PADRAO = ATIVO
+DOCUMENTAL_VALUE = WORKING_ONLY | CANDIDATE_FOR_ARCHIVE | MUST_ARCHIVE
+DRIVE_STATUS = NOT_REQUIRED | PENDING_RELATOR | ARCHIVED_IN_DRIVE
