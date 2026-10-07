@@ -1,0 +1,2 @@
+{"category":"prompt_injection","event_id":"inc-synthetic-001","preserved_failure":true,"severity":"MEDIUM","status":"OPEN","summary":"synthetic instruction attempted to override the local policy"}
+{"category":"logging_failure","event_id":"inc-synthetic-002","preserved_failure":true,"severity":"HIGH","status":"OPEN","summary":"synthetic logger outage caused a fail-closed denial"}
