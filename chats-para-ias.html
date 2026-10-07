@@ -95,7 +95,8 @@
         <div class="chat-room-list" data-room-list="universidade"></div>
       </div>
       <label class="chat-label" for="universidade-question">Pergunta para Charlie Echo</label>
-      <textarea id="universidade-question" rows="6" placeholder="Ex.: Continue a aula anterior, indique a fonte e diga o que ainda precisa ser verificado."></textarea>
+      <p class="small" id="universidade-privacy-note">Ao enviar, a pergunta e um contexto recente minimizado desta sala são transmitidos à API da Charlie Echo para gerar a resposta. Não inclua senhas, tokens, segredos ou dados sigilosos. A memória desta sala permanece no armazenamento da sessão do navegador.</p>
+      <textarea id="universidade-question" rows="6" maxlength="4000" aria-describedby="universidade-privacy-note" placeholder="Ex.: Continue a aula anterior, indique a fonte e diga o que ainda precisa ser verificado."></textarea>
       <button class="btn primary" type="button" id="universidade-send">Enviar para Charlie Echo</button>
       <div class="chat-response" id="universidade-response" aria-live="polite">Charlie Echo aguardando sua pergunta.</div>
     </section>
@@ -103,6 +104,6 @@
 </main>
 <footer class="footer">Recordo da face ancestral.</footer>
 <script src="assets/js/main.js"></script>
-<script src="assets/js/chats-para-ias.js?v=1.1"></script>
+<script src="assets/js/chats-para-ias.js?v=1.2"></script>
 </body>
 </html>
