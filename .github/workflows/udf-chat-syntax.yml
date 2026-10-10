@@ -1,0 +1,31 @@
+name: UDF chat script syntax
+
+on:
+  pull_request:
+    paths:
+      - 'assets/js/chats-para-ias.js'
+      - '.github/workflows/udf-chat-syntax.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'assets/js/chats-para-ias.js'
+      - '.github/workflows/udf-chat-syntax.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  javascript-syntax:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reject invalid classroom chat JavaScript
+        run: node --check assets/js/chats-para-ias.js
