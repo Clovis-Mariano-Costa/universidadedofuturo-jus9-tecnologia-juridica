@@ -1,0 +1,19 @@
+{
+  "corpus_id": "B11",
+  "version": "B11.1-synthetic",
+  "data_classification": "SYNTHETIC_ONLY",
+  "scenarios": [
+    {"scenario_id": "S01", "signal": 35, "threshold": 60, "expected": "FAIL", "applicable_configs": ["B0", "B1", "B2", "B3", "B4", "B5"]},
+    {"scenario_id": "S02", "signal": 42, "threshold": 60, "expected": "FAIL", "applicable_configs": ["B0", "B1", "B2", "B3", "B4", "B5"]},
+    {"scenario_id": "S03", "signal": 50, "threshold": 60, "expected": "FAIL", "applicable_configs": ["B0", "B1", "B2", "B3", "B4", "B5"]},
+    {"scenario_id": "S04", "signal": 58, "threshold": 60, "expected": "FAIL", "applicable_configs": ["B0", "B1", "B2", "B3", "B4", "B5"]},
+    {"scenario_id": "S05", "signal": 61, "threshold": 60, "expected": "PASS", "applicable_configs": ["B0", "B1", "B2", "B3", "B4", "B5"]},
+    {"scenario_id": "S06", "signal": 66, "threshold": 60, "expected": "PASS", "applicable_configs": ["B0", "B1", "B2", "B3", "B4", "B5"]},
+    {"scenario_id": "S07", "signal": 70, "threshold": 60, "expected": "PASS", "applicable_configs": ["B0", "B1", "B2", "B3", "B4", "B5"]},
+    {"scenario_id": "S08", "signal": 74, "threshold": 60, "expected": "PASS", "applicable_configs": ["B0", "B1", "B2", "B3", "B4", "B5"]},
+    {"scenario_id": "S09", "signal": 79, "threshold": 60, "expected": "PASS", "applicable_configs": ["B0", "B1", "B2", "B3", "B4", "B5"]},
+    {"scenario_id": "S10", "signal": 84, "threshold": 60, "expected": "PASS", "applicable_configs": ["B0", "B1", "B2", "B3", "B4", "B5"]},
+    {"scenario_id": "S11", "signal": 90, "threshold": 60, "expected": "PASS", "applicable_configs": ["B0", "B1", "B2", "B3", "B4", "B5"]},
+    {"scenario_id": "S12", "signal": 55, "threshold": 60, "expected": "N/A", "applicable_configs": ["B1", "B2", "B3", "B4", "B5"]}
+  ]
+}

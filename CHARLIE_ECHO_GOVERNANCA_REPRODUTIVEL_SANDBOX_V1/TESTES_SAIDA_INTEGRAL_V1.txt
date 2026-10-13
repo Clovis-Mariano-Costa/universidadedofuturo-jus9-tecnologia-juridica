@@ -1,0 +1,23 @@
+test_competence_change_is_denied ... ok
+test_disputed_memory_is_denied ... ok
+test_local_self_verification_passes ... ok
+test_logging_failure_is_fail_closed ... ok
+test_privilege_escalation_is_denied ... ok
+test_prompt_injection_is_denied ... ok
+test_replay_is_denied ... ok
+test_revoked_authorization_is_denied ... ok
+test_rollback ... ok
+test_self_verification_cannot_be_external ... ok
+test_supersession_resolves_new_version ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.046s
+
+OK
+
+Self-verification: PASS
+Evidence SHA-256: 825654c8d166b57291aceffe01a5b8ad3a5aa5c656e4997cdabbf1433084a290
+Rollback: PASS
+Baseline SHA-256: fd0a616758e83597cf47f587f81567830ca1b92182e2e61560fefad21cc06465
+Changed SHA-256: 15783a0ae76c79a74495a5f33704a54859524767f705eba38a663b87e242bb3b
+Restored SHA-256: fd0a616758e83597cf47f587f81567830ca1b92182e2e61560fefad21cc06465
